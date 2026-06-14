@@ -14,13 +14,13 @@
 
 /* Force Dark Mode First styling based on the PDS & rules */
 :root {
-  --background: #020617; /* slate-950 */
-  --foreground: #f8fafc; /* slate-50 */
-  --primary: #facc15; /* yellow-400 */
-  --primary-foreground: #020617; /* dark text on yellow */
-  --secondary: #0f172a; /* slate-900 */
-  --muted: #334155; /* slate-700 */
-  --border: #1e293b; /* slate-800 */
+  --background: #18181b; /* Charcoal (zinc-900) */
+  --foreground: #ffffff; /* Putih */
+  --primary: #ffffff; /* Putih sebagai primary accent */
+  --primary-foreground: #18181b; /* Charcoal text di atas primary putih */
+  --secondary: #27272a; /* Lighter charcoal (zinc-800) */
+  --muted: #52525b; /* Muted text (zinc-600) */
+  --border: #3f3f46; /* Border charcoal (zinc-700) */
 }
 
 body {
