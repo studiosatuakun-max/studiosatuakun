@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../shared/button";
 import { ArrowUpRight } from "lucide-react";
 
 const categories = ["All", "Website", "Mobile App", "SaaS", "Dashboard", "Marketplace", "Web App"];
+
+import { ProjectMockup } from "./project-mockups";
 
 const portfolioData = [
   {
@@ -14,9 +16,9 @@ const portfolioData = [
     description: "Marketplace jasa absurd dengan fitur transaksi aman dan real-time chat.",
     tech: ["Next.js", "Supabase", "Tailwind"],
     industry: "E-Commerce",
-    color: "from-blue-500/20 to-purple-500/20",
     slug: "jasurd",
-    year: "2024"
+    year: "2024",
+    link: "https://jasurd.com",
   },
   {
     title: "SkorAkhir.com",
@@ -24,9 +26,9 @@ const portfolioData = [
     description: "Portal berita olahraga berbasis link affiliate dengan performa tinggi & SEO optimized.",
     tech: ["Next.js", "Sanity CMS", "Redis"],
     industry: "Media & Sports",
-    color: "from-green-500/20 to-emerald-500/20",
     slug: "skorakhir",
-    year: "2025"
+    year: "2025",
+    link: "https://skorakhir.com",
   },
   {
     title: "Smart Tender",
@@ -34,9 +36,9 @@ const portfolioData = [
     description: "Smart dashboard untuk Project dan Tender monitoring yang terintegrasi.",
     tech: ["React", "Node.js", "PostgreSQL"],
     industry: "Construction & B2B",
-    color: "from-orange-500/20 to-red-500/20",
     slug: "smart-tender",
-    year: "2024"
+    year: "2024",
+    link: "https://tender-intelligence-project-managem.vercel.app/",
   },
   {
     title: "Selfify.id",
@@ -44,9 +46,9 @@ const portfolioData = [
     description: "Safe space portal untuk kesehatan mental dan komunitas.",
     tech: ["Next.js", "Firebase", "Framer Motion"],
     industry: "Health & Wellness",
-    color: "from-pink-500/20 to-rose-500/20",
     slug: "selfify",
-    year: "2024"
+    year: "2024",
+    link: "https://selfify.id",
   },
   {
     title: "Smart POS",
@@ -54,9 +56,9 @@ const portfolioData = [
     description: "Sistem Point of Sales cerdas dengan manajemen inventaris dan laporan real-time.",
     tech: ["Next.js", "Supabase", "Prisma"],
     industry: "Retail & F&B",
-    color: "from-cyan-500/20 to-blue-500/20",
     slug: "smart-pos",
-    year: "2025"
+    year: "2025",
+    link: "https://greennagan-deels-projects.vercel.app/",
   },
   {
     title: "vitation.id",
@@ -64,14 +66,38 @@ const portfolioData = [
     description: "SaaS Digital Invitation Generator untuk pembuatan undangan interaktif yang elegan.",
     tech: ["Next.js", "Tailwind", "PostgreSQL"],
     industry: "Events & Lifestyle",
-    color: "from-zinc-500/20 to-neutral-500/20",
     slug: "vitation",
-    year: "2026"
+    year: "2026",
+    link: "https://vitation.id",
   },
 ];
 
 export function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("mousemove", handleMouseMove);
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener("mousemove", handleMouseMove);
+      }
+    };
+  }, []);
 
   const filteredData = portfolioData.filter(
     (item) => activeCategory === "All" || item.category === activeCategory
@@ -85,7 +111,7 @@ export function PortfolioGrid() {
           <Button
             key={cat}
             variant={activeCategory === cat ? "default" : "outline"}
-            className="rounded-full"
+            className="rounded-full text-xs font-mono"
             onClick={() => setActiveCategory(cat)}
           >
             {cat}
@@ -94,61 +120,74 @@ export function PortfolioGrid() {
       </div>
 
       {/* Grid */}
-      <motion.div 
-        layout 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        <AnimatePresence>
-          {filteredData.map((project) => (
-            <motion.div
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              key={project.slug}
-              className="group rounded-2xl border border-border/50 bg-secondary/10 overflow-hidden hover:border-primary/50 transition-colors"
-            >
-              {/* Image / Mockup Area with Interactive Hover */}
-              <div className={`h-64 w-full bg-gradient-to-br ${project.color} p-6 relative overflow-hidden`}>
-                 <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm">
-                    <h4 className="text-xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.title}</h4>
-                    <p className="text-sm text-primary mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">{project.industry} • {project.year}</p>
-                    <Button variant="secondary" className="gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
-                      View Case Study <ArrowUpRight className="w-4 h-4" />
-                    </Button>
-                 </div>
-                 {/* Placeholder for actual image */}
-                 <div className="w-full h-full border border-border/20 bg-background/50 rounded-lg shadow-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-500">
-                    <span className="font-bold text-2xl opacity-30">{project.title}</span>
-                 </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <span className="px-3 py-1 bg-background border border-border/50 rounded-full text-xs font-medium text-muted-foreground">
-                    {project.category}
-                  </span>
+      <div ref={containerRef} className="relative">
+        <div 
+          className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100 z-0"
+          style={{
+            background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.06), transparent 40%)`
+          }}
+        />
+        
+        <motion.div 
+          layout 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
+        >
+          <AnimatePresence>
+            {filteredData.map((project) => (
+              <motion.a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                key={project.slug}
+                className="group relative flex flex-col bg-[#0a0a0a] cursor-pointer"
+              >
+                {/* Dashboard Window Mockup */}
+                <div className="h-56 w-full bg-[#111] rounded-t-xl border border-white/10 border-b-0 overflow-hidden relative">
+                  {/* Fake Browser Header */}
+                  <div className="h-8 bg-[#0a0a0a] border-b border-white/10 flex items-center px-4 gap-2 relative z-10">
+                     <div className="flex gap-1.5">
+                       <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                       <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                       <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                     </div>
+                  </div>
+                  {/* Content Area */}
+                  <div className="absolute inset-x-0 bottom-0 top-8 bg-grid-white/[0.02] bg-[size:16px_16px] flex items-center justify-center pt-6 px-4">
+                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-0"></div>
+                     
+                     <div className="w-full h-full rounded-t-xl border border-white/10 border-b-0 bg-[#161616] shadow-2xl translate-y-8 group-hover:translate-y-4 transition-transform duration-500 relative z-10 overflow-hidden">
+                       <ProjectMockup title={project.title} />
+                     </div>
+                  </div>
                 </div>
-                
-                <p className="text-muted-foreground text-sm mb-6 line-clamp-2">
-                  {project.description}
-                </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t, idx) => (
-                    <span key={idx} className="text-xs font-medium px-2 py-1 rounded-md bg-secondary/50 text-muted-foreground">
-                      {t}
-                    </span>
-                  ))}
+                {/* Text Content */}
+                <div className="p-6 border border-white/10 rounded-b-xl flex-grow z-10 bg-[#0a0a0a]">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-lg font-bold tracking-tight group-hover:text-white transition-colors">{project.title}</h3>
+                    <span className="text-[10px] font-mono text-muted-foreground">{project.category}</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-6 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t, idx) => (
+                      <span key={idx} className="text-[10px] uppercase tracking-wider font-mono text-muted-foreground">
+                        {t}{idx < project.tech.length - 1 && <span className="mx-2 text-white/20">/</span>}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+              </motion.a>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
     </div>
   );
 }

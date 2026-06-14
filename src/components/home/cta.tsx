@@ -7,31 +7,33 @@ import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="py-24">
+    <section className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-8">
         <motion.div 
-          className="relative rounded-3xl overflow-hidden bg-primary px-6 py-20 md:px-12 md:py-24 text-center border border-primary/20"
-          initial={{ opacity: 0, scale: 0.95 }}
+          className="relative rounded-2xl overflow-hidden bg-[#111] border border-white/10 px-6 py-20 md:px-12 md:py-24 text-center shadow-2xl"
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {/* Abstract BG */}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white rounded-full blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/3"></div>
+          {/* Abstract Grid & Glow */}
+          <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:24px_24px]"></div>
+          <div className="absolute top-0 left-1/2 w-full max-w-lg h-full bg-white/[0.03] blur-[100px] -translate-x-1/2 pointer-events-none"></div>
 
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground tracking-tight">
-              Punya Ide Produk Digital?
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter text-foreground">
+              Ready to Build?
             </h2>
-            <p className="text-primary-foreground/80 text-lg md:text-xl mb-10">
-              Mari diskusikan kebutuhan bisnis Anda. Kami siap membantu mewujudkan ide Anda menjadi produk digital yang sukses.
+            <p className="text-muted-foreground text-lg mb-10 tracking-tight">
+              Transform your ideas into high-performance digital products. Let's discuss your technical requirements and architecture.
             </p>
-            <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-primary gap-2 h-14 px-8 text-lg font-semibold shadow-xl">
-                Mulai Diskusi <ArrowRight className="w-5 h-5" />
-              </Button>
-            </Link>
+            <div className="flex justify-center gap-4">
+              <Link href="/contact">
+                <Button size="lg" className="h-12 px-8 text-base font-medium shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                  Start Your Project
+                </Button>
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>
