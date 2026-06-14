@@ -58,6 +58,16 @@ const portfolioData = [
     slug: "smart-pos",
     year: "2025"
   },
+  {
+    title: "vitation.id",
+    category: "SaaS",
+    description: "SaaS Digital Invitation Generator untuk pembuatan undangan interaktif yang elegan.",
+    tech: ["Next.js", "Tailwind", "PostgreSQL"],
+    industry: "Events & Lifestyle",
+    color: "from-zinc-500/20 to-neutral-500/20",
+    slug: "vitation",
+    year: "2026"
+  },
 ];
 
 export function PortfolioGrid() {

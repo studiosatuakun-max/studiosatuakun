@@ -46,6 +46,14 @@ const portfolioData = [
     industry: "Retail & F&B",
     color: "from-cyan-500/20 to-blue-500/20",
   },
+  {
+    title: "vitation.id",
+    category: "SaaS",
+    description: "SaaS Digital Invitation Generator untuk pembuatan undangan interaktif yang elegan.",
+    tech: ["Next.js", "Tailwind", "PostgreSQL"],
+    industry: "Events & Lifestyle",
+    color: "from-zinc-500/20 to-neutral-500/20",
+  },
 ];
 
 export function FeaturedPortfolio() {
