@@ -20,7 +20,7 @@ export function Navbar() {
         </nav>
         <div className="flex items-center gap-4">
           <Link href="/contact">
-            <Button>Konsultasi Gratis</Button>
+            <Button className="font-medium tracking-wide bg-transparent hover:bg-transparent">Konsultasi Gratis</Button>
           </Link>
         </div>
       </div>

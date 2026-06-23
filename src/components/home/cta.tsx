@@ -1,41 +1,72 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "../shared/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-8">
-        <motion.div 
-          className="relative rounded-2xl overflow-hidden bg-[#111] border border-white/10 px-6 py-20 md:px-12 md:py-24 text-center shadow-2xl"
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* Abstract Grid & Glow */}
-          <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:24px_24px]"></div>
-          <div className="absolute top-0 left-1/2 w-full max-w-lg h-full bg-white/[0.03] blur-[100px] -translate-x-1/2 pointer-events-none"></div>
+    <section className="py-32 md:py-48 relative bg-[#020202] border-t border-white/5 overflow-hidden flex items-center justify-center">
+      {/* Subtle minimalist border gradient and glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-[150px] bg-yellow-400/5 blur-[100px] pointer-events-none"></div>
 
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter text-foreground">
-              Ready to Build?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-10 tracking-tight">
-              Transform your ideas into high-performance digital products. Let's discuss your technical requirements and architecture.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Link href="/contact">
-                <Button size="lg" className="h-12 px-8 text-base font-medium shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-                  Start Your Project
-                </Button>
-              </Link>
+      <div className="container mx-auto px-4 sm:px-8">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          {/* Status Indicator */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.02] border border-white/5 mb-10"
+          >
+            <div className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </div>
-          </div>
-        </motion.div>
+            <span className="text-xs font-medium text-white/60 tracking-wider uppercase">Available for new projects</span>
+          </motion.div>
+
+          {/* Minimalist Heading */}
+          <motion.h2 
+            className="text-5xl md:text-8xl font-bold mb-8 tracking-tighter text-white leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Let's build something <br className="hidden md:block"/> <span className="text-white/40 italic font-normal tracking-normal" style={{ fontFamily: "'Times New Roman MT', 'Times New Roman', serif" }}>extraordinary.</span>
+          </motion.h2>
+
+          {/* Subheading */}
+          <motion.p 
+            className="text-white/40 text-lg md:text-2xl mb-14 tracking-tight max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Transform your visionary ideas into high-performance digital products. 
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Link 
+              href="/contact"
+              className="group relative inline-flex items-center justify-center gap-3 h-16 px-12 bg-transparent text-white font-semibold text-2xl transition-all active:scale-95 border-x border-white/20 hover:border-white/60"
+            >
+              <span className="relative z-10 flex items-center gap-3">
+                Start a Conversation
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
