@@ -117,7 +117,7 @@ export function Hero() {
         style={{ perspective: 1200 }}
       >
         <motion.div 
-          className="relative rounded-xl border border-white/10 bg-black/50 p-1 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8),0_0_20px_rgba(255,255,255,0.05)] overflow-hidden aspect-[16/9] flex flex-col"
+          className="relative rounded-xl border border-white/10 bg-black/50 p-1 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8),0_0_20px_rgba(255,255,255,0.05)] overflow-hidden min-h-[450px] sm:min-h-0 sm:aspect-[4/3] lg:aspect-[16/9] flex flex-col w-full"
           style={{ rotateX, rotateY, transformStyle: "preserve-3d", transform: "translateZ(30px)" }}
         >
            {/* Fake macOS window header */}

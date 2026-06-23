@@ -444,7 +444,7 @@ export function AppView() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.15 + 0.2 }}
-          className="w-48 h-full max-h-[320px] bg-black rounded-[2rem] border-[4px] border-[#1a1a1a] p-1.5 shadow-2xl relative flex flex-col group overflow-hidden"
+          className="w-48 h-full max-h-[320px] bg-black rounded-[2rem] border-[4px] border-[#1a1a1a] p-1.5 shadow-2xl relative flex flex-col group overflow-hidden shrink-0"
         >
           {/* Top Notch */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-[#1a1a1a] rounded-b-xl z-20 flex justify-center items-center gap-1">
