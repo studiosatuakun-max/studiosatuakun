@@ -12,9 +12,6 @@ export const metadata: Metadata = {
   description: "Website, Mobile App, AI Automation, dan Software Custom untuk membantu bisnis berkembang lebih cepat.",
 };
 
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,9 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased dark`}>
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground">
-        <Navbar />
-        <main className="flex-1 flex flex-col">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
