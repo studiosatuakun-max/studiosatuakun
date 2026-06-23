@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/shared/button";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 interface HeroSectionProps {
@@ -45,7 +46,20 @@ export function HeroSection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="flex flex-col items-center"
         >
+          {/* Logo */}
+          <Link href="/" className="mb-12 inline-block">
+            <Image 
+              src={isLight ? "/color.svg" : "/bw.svg"} 
+              alt="Studio Satu Akun Logo" 
+              width={200} 
+              height={60} 
+              className="h-16 sm:h-20 w-auto object-contain"
+              priority
+            />
+          </Link>
+
           {/* Pill Badge */}
           {badgeText && (
             <div className={`inline-flex items-center rounded-full border ${isLight ? "border-slate-200 bg-white/50 text-slate-700 shadow-sm" : "border-white/10 bg-white/5 text-slate-300 shadow-[0_0_15px_rgba(255,255,255,0.05)]"} px-4 py-1.5 text-xs sm:text-sm mb-8 backdrop-blur-md`}>

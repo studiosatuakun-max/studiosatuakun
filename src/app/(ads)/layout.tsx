@@ -1,11 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 
 function MinimalFooter() {
   return (
     <footer className="py-12 border-t border-white/10 bg-slate-950 text-slate-400 text-center">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <h3 className="text-xl font-bold text-white mb-4">Studio Satu Akun</h3>
+      <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
+        <Link href="/" className="mb-6 inline-block">
+          <Image 
+            src="/bw.svg" 
+            alt="Studio Satu Akun Logo" 
+            width={180} 
+            height={50} 
+            className="h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+          />
+        </Link>
         <p className="mb-8 max-w-2xl mx-auto leading-relaxed">
           Website, Mobile App, AI Automation, dan Software Custom untuk membantu bisnis berkembang lebih cepat.
         </p>

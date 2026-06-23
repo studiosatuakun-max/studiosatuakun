@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Button } from "../shared/button";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { CentralHubView, CodeToUIView, WebsiteView, AppView, SoftwareView } from "./hero-mockups";
 
 export function Hero() {
@@ -46,7 +47,19 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           style={{ transform: "translateZ(60px)" }}
+          className="flex flex-col items-center"
         >
+          <Link href="/" className="mb-10 inline-block">
+            <Image 
+              src="/bw.svg" 
+              alt="Studio Satu Akun Logo" 
+              width={200} 
+              height={60} 
+              className="h-16 sm:h-20 w-auto object-contain"
+              priority
+            />
+          </Link>
+
           {/* Pill Badge */}
           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs sm:text-sm text-foreground/80 mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.05)]">
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-foreground/70" />

@@ -1,15 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background py-12 mt-auto">
       <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
-          <Link href="/" className="flex items-center gap-2 mb-4">
-            <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center font-bold text-primary-foreground text-xl">
-              S
-            </div>
-            <span className="font-bold text-lg">Studio Satu Akun</span>
+          <Link href="/" className="inline-block mb-6">
+            <Image 
+              src="/bw.svg" 
+              alt="Studio Satu Akun Logo" 
+              width={180} 
+              height={50} 
+              className="h-20 w-auto object-contain"
+            />
           </Link>
           <p className="text-muted-foreground text-sm max-w-xs">
             Website, Mobile App, AI Automation, dan Software Custom untuk membantu bisnis berkembang lebih cepat.
