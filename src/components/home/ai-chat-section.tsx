@@ -1,49 +1,107 @@
 "use client";
 
-import { useChat } from '@ai-sdk/react';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Bot, Send, Code, Loader2, Sparkles, LayoutPanelLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
+interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export function AiChatSection() {
   const [isExpanded, setIsExpanded] = useState(false);
-  
   const [inputValue, setInputValue] = useState('');
-  
-  // @ts-ignore - Vercel AI SDK type mismatch workaround
-  const { messages, sendMessage, status } = useChat();
-  const isLoading = status === 'streaming' || status === 'submitted';
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value);
-  
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!inputValue?.trim() || isLoading) return;
-    
-    // @ts-ignore
-    sendMessage({ role: 'user', content: inputValue, text: inputValue, parts: [{ type: 'text', text: inputValue }] });
-    setInputValue('');
-  };
-
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const getMessageText = (m: any) => {
-    if (m.content) return m.content;
-    if (m.parts) return m.parts.map((p: any) => p.type === 'text' ? p.text : '').join('');
-    if (m.text) return m.text;
-    return '';
+  const sendMessage = useCallback(async () => {
+    if (!inputValue.trim() || isLoading) return;
+
+    const userMessage: ChatMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: inputValue.trim(),
+    };
+
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
+    setInputValue('');
+    setIsLoading(true);
+
+    const assistantId = (Date.now() + 1).toString();
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: updatedMessages.map(m => ({
+            role: m.role,
+            content: m.content,
+          })),
+        }),
+      });
+
+      if (!res.ok || !res.body) {
+        throw new Error('Failed to fetch AI response');
+      }
+
+      // Read the text stream
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let fullText = '';
+
+      // Add empty assistant message
+      setMessages(prev => [...prev, { id: assistantId, role: 'assistant', content: '' }]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        fullText += chunk;
+
+        // Update assistant message with streamed content
+        setMessages(prev =>
+          prev.map(m => m.id === assistantId ? { ...m, content: fullText } : m)
+        );
+      }
+    } catch (error) {
+      console.error('Chat error:', error);
+      setMessages(prev => [
+        ...prev,
+        {
+          id: assistantId,
+          role: 'assistant',
+          content: 'Maaf, terjadi kesalahan saat menghubungi AI. Silakan coba lagi.',
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [inputValue, isLoading, messages]);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    sendMessage();
+  };
+
+  const handleButtonClick = () => {
+    sendMessage();
   };
 
   // Look for the latest generated HTML to preview
   const latestHtmlCode = messages
     .filter(m => m.role === 'assistant')
     .map(m => {
-      const text = getMessageText(m);
-      const match = text.match(/```html\n([\s\S]*?)\n```/);
+      const match = m.content.match(/```html\n([\s\S]*?)\n```/);
       return match ? match[1] : null;
     })
     .filter(Boolean)
@@ -139,7 +197,7 @@ export function AiChatSection() {
                         }
                       }}
                     >
-                      {getMessageText(m)}
+                      {m.content}
                     </ReactMarkdown>
                   </div>
                 </div>
@@ -164,13 +222,14 @@ export function AiChatSection() {
               <form onSubmit={handleSubmit} className="relative flex items-center">
                 <input
                   value={inputValue}
-                  onChange={handleInputChange}
+                  onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ceritakan ide Anda di sini..."
                   className="w-full bg-[#111] border border-white/10 rounded-full pl-5 pr-12 py-3 text-sm text-white focus:outline-none focus:border-yellow-400/50 focus:ring-1 focus:ring-yellow-400/50 transition-all placeholder:text-muted-foreground"
                 />
                 <button
-                  type="submit"
-                  disabled={isLoading || !inputValue?.trim()}
+                  type="button"
+                  onClick={handleButtonClick}
+                  disabled={isLoading || !inputValue.trim()}
                   className="absolute right-2 w-8 h-8 flex items-center justify-center rounded-full bg-yellow-400 text-slate-900 hover:bg-yellow-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <Send className="w-4 h-4 ml-0.5" />
