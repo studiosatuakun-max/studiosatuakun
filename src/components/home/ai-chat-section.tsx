@@ -8,20 +8,10 @@ import ReactMarkdown from 'react-markdown';
 export function AiChatSection() {
   const [isExpanded, setIsExpanded] = useState(false);
   
-  const [input, setInput] = useState('');
-  
   // @ts-ignore - Vercel AI SDK type mismatch workaround
-  const { messages, append, status } = useChat();
-  const isLoading = status === 'streaming' || status === 'submitted';
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value);
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!input?.trim() || isLoading) return;
-    // @ts-ignore
-    append({ role: 'user', content: input });
-    setInput('');
-  };
+  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+    initialInput: ''
+  });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -161,14 +151,14 @@ export function AiChatSection() {
             <div className="p-4 bg-black/20 border-t border-white/10 shrink-0">
               <form onSubmit={handleSubmit} className="relative flex items-center">
                 <input
-                  value={input}
+                  value={input || ''}
                   onChange={handleInputChange}
-                  placeholder="Ketik ide aplikasi Anda di sini..."
+                  placeholder="Ceritakan ide Anda di sini..."
                   className="w-full bg-[#111] border border-white/10 rounded-full pl-5 pr-12 py-3 text-sm text-white focus:outline-none focus:border-yellow-400/50 focus:ring-1 focus:ring-yellow-400/50 transition-all placeholder:text-muted-foreground"
                 />
                 <button
                   type="submit"
-                  disabled={isLoading || !input.trim()}
+                  disabled={isLoading || !(input || '').trim()}
                   className="absolute right-2 w-8 h-8 flex items-center justify-center rounded-full bg-yellow-400 text-slate-900 hover:bg-yellow-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <Send className="w-4 h-4 ml-0.5" />
