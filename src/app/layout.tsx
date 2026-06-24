@@ -9,11 +9,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://studiosatuakun.id"),
-  title: "Studio Satu Akun | Jasa Pembuatan Website, Aplikasi & Software Custom",
-  description: "Software house premium yang membantu bisnis UMKM, Startup, dan Perusahaan bertransformasi digital melalui Website, Mobile App, dan AI Automation.",
+  title: "Studio Satu Akun | Premium Software House & Web Development",
+  description: "Premium Software House yang menyediakan jasa pembuatan website, aplikasi mobile, dan software custom untuk digitalisasi UMKM dan perusahaan lokal di Indonesia.",
+  keywords: ["Jasa Pembuatan Website", "Jasa Pembuatan Software", "Web Developer Lokal", "Jasa Bikin Aplikasi", "Software House Indonesia", "Konsultan IT Lokal", "Jasa Pembuatan Web Custom"],
   openGraph: {
-    title: "Studio Satu Akun | Jasa Pembuatan Website & Software Custom",
-    description: "Software house premium yang membantu bisnis UMKM, Startup, dan Perusahaan bertransformasi digital.",
+    title: "Studio Satu Akun | Premium Software House & Web Development",
+    description: "Premium Software House yang menyediakan jasa pembuatan website, aplikasi mobile, dan software custom untuk digitalisasi UMKM dan perusahaan lokal di Indonesia.",
     url: "https://studiosatuakun.id",
     siteName: "Studio Satu Akun",
     images: [
@@ -29,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Satu Akun | Jasa Pembuatan Website & Software Custom",
-    description: "Premium digital solutions for your business growth.",
+    title: "Studio Satu Akun | Premium Software House & Web Development",
+    description: "Premium Software House yang menyediakan jasa pembuatan website, aplikasi mobile, dan software custom.",
     images: ["https://studiosatuakun.id/og.png"],
   },
   icons: {
@@ -56,7 +57,7 @@ export default function RootLayout({
       "@type": "PostalAddress",
       addressCountry: "ID",
     },
-    description: "Software house premium melayani pembuatan Website, Aplikasi Mobile, AI Automation, dan Software Custom.",
+    description: "Premium Software House lokal yang melayani jasa pembuatan Website, Aplikasi Mobile, AI Automation, dan Software Custom profesional.",
     priceRange: "$$",
   };
 
