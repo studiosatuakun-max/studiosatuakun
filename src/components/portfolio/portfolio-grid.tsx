@@ -154,14 +154,14 @@ export function PortfolioGrid() {
               >
                 {/* Dashboard Window Mockup */}
                 <div className="h-56 w-full bg-[#111] rounded-t-xl border border-white/10 border-b-0 overflow-hidden relative">
-                  {/* Fake Browser Header */}
-                  <div className="h-8 bg-[#0a0a0a] border-b border-white/10 flex items-center px-4 gap-2 relative z-10">
-                     <div className="flex gap-1.5">
-                       <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                       <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                       <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                     </div>
-                  </div>
+                   {/* Fake Browser Header */}
+                   <div className="h-8 bg-[#0a0a0a] border-b border-white/10 flex items-center px-4 gap-2 relative z-10">
+                      <div className="flex gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-red-500/80 shadow-[0_0_8px_rgba(239,68,68,0.6)] animate-pulse"></div>
+                        <div className="w-2 h-2 rounded-full bg-yellow-500/80 shadow-[0_0_8px_rgba(234,179,8,0.6)] animate-pulse" style={{ animationDelay: '200ms' }}></div>
+                        <div className="w-2 h-2 rounded-full bg-green-500/80 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" style={{ animationDelay: '400ms' }}></div>
+                      </div>
+                   </div>
                   {/* Content Area */}
                   <div className="absolute inset-x-0 bottom-0 top-8 bg-grid-white/[0.02] bg-[size:16px_16px] flex items-center justify-center pt-6 px-4">
                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-0"></div>

@@ -153,9 +153,9 @@ function PortfolioCard({ project, index }: { project: any, index: number }) {
           {/* Fake Browser Header */}
           <div className="h-10 bg-[#0a0a0a] border-b border-white/10 flex items-center px-4 gap-2 relative z-10" style={{ transform: "translateZ(10px)" }}>
              <div className="flex gap-1.5">
-               <div className="w-2.5 h-2.5 rounded-full bg-white/20 shadow-sm"></div>
-               <div className="w-2.5 h-2.5 rounded-full bg-white/20 shadow-sm"></div>
-               <div className="w-2.5 h-2.5 rounded-full bg-white/20 shadow-sm"></div>
+               <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shadow-[0_0_10px_rgba(239,68,68,0.6)] animate-pulse"></div>
+               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.6)] animate-pulse" style={{ animationDelay: '200ms' }}></div>
+               <div className="w-2.5 h-2.5 rounded-full bg-green-500/80 shadow-[0_0_10px_rgba(34,197,94,0.6)] animate-pulse" style={{ animationDelay: '400ms' }}></div>
              </div>
              <div className="ml-4 px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono text-muted-foreground border border-white/5 shadow-inner">
                {project.title.toLowerCase().replace(/\s+/g, '-')}
