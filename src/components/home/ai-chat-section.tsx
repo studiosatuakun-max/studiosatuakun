@@ -18,6 +18,7 @@ export function AiChatSection() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input?.trim() || isLoading) return;
+    // @ts-ignore
     sendMessage(input);
     setInput('');
   };
