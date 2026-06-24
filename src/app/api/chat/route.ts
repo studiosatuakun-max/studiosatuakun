@@ -23,5 +23,5 @@ Always respond in Indonesian.
     system: systemPrompt,
   });
 
-  return result.toDataStreamResponse();
+  return result.toTextStreamResponse();
 }
