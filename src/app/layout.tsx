@@ -56,7 +56,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Studio Satu Akun",
+    name: "PT Studio Satu Akun",
     image: "https://studiosatuakun.id/og.png",
     url: "https://studiosatuakun.id",
     telephone: "+6282260880878",

@@ -39,7 +39,7 @@ export function Footer() {
         </div>
       </div>
       <div className="container mx-auto px-4 sm:px-8 mt-12 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground flex flex-col md:flex-row justify-between items-center">
-        <p>&copy; {new Date().getFullYear()} Studio Satu Akun. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} PT Studio Satu Akun. All rights reserved.</p>
         <div className="flex gap-4 mt-4 md:mt-0">
           <Link href="#" className="hover:text-foreground transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-foreground transition-colors">Terms of Service</Link>
