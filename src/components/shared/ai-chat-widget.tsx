@@ -17,7 +17,7 @@ export function AiChatWidget() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
-    sendMessage({ role: 'user', content: input });
+    sendMessage(input);
     setInput('');
   };
   const messagesEndRef = useRef<HTMLDivElement>(null);
