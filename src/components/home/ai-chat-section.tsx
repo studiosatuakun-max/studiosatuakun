@@ -86,7 +86,7 @@ export function AiChatSection() {
                   <Bot className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">Tech Lead AI</h3>
+                  <h3 className="font-bold text-white text-sm">Ai Studio</h3>
                   <div className="flex items-center gap-1.5">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-xs text-muted-foreground">Online</span>
@@ -105,7 +105,7 @@ export function AiChatSection() {
                 <div className="text-center mt-10 opacity-70">
                   <Bot className="w-10 h-10 mx-auto text-yellow-500 mb-4 opacity-50" />
                   <p className="text-sm text-muted-foreground">
-                    Ketik pesan pertama Anda di bawah ini untuk memulai sesi konsultasi gratis.
+                    Ceritakan ide Anda untuk memulai.
                   </p>
                 </div>
               )}
