@@ -1,14 +1,75 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Calendar, Code, FileText, User, Clock, CheckCircle } from "lucide-react";
+import { RadialOrbitalTimeline, TimelineItem } from "../ui/radial-orbital-timeline";
 
-const steps = [
-  { id: "01", title: "Discovery", desc: "Memahami visi, kebutuhan bisnis, dan target audiens Anda." },
-  { id: "02", title: "Design", desc: "Merancang wireframe dan UI/UX yang intuitif & modern." },
-  { id: "03", title: "Development", desc: "Proses coding menggunakan teknologi terbaik dan clean code." },
-  { id: "04", title: "Testing", desc: "Quality assurance ketat untuk memastikan tidak ada bug." },
-  { id: "05", title: "Launch", desc: "Deployment aplikasi ke server production." },
-  { id: "06", title: "Maintenance", desc: "Dukungan berkelanjutan dan pembaruan sistem." },
+const timelineData: TimelineItem[] = [
+  {
+    id: 1,
+    title: "Discovery",
+    date: "Phase 01",
+    content: "Memahami visi, kebutuhan bisnis, dan target audiens Anda. Kami melakukan riset mendalam untuk menyusun strategi digital.",
+    category: "Planning",
+    icon: Calendar,
+    relatedIds: [2],
+    status: "completed",
+    energy: 100,
+  },
+  {
+    id: 2,
+    title: "Design",
+    date: "Phase 02",
+    content: "Merancang wireframe dan UI/UX yang intuitif & modern. Fokus pada pixel-perfect design dan user experience yang tak tertandingi.",
+    category: "Design",
+    icon: FileText,
+    relatedIds: [1, 3],
+    status: "completed",
+    energy: 90,
+  },
+  {
+    id: 3,
+    title: "Development",
+    date: "Phase 03",
+    content: "Proses coding menggunakan teknologi terbaik dan clean code. Mengubah desain menjadi produk fungsional yang berkecepatan tinggi.",
+    category: "Development",
+    icon: Code,
+    relatedIds: [2, 4],
+    status: "in-progress",
+    energy: 60,
+  },
+  {
+    id: 4,
+    title: "Testing",
+    date: "Phase 04",
+    content: "Quality assurance ketat untuk memastikan tidak ada bug. Uji performa, keamanan, dan fungsionalitas di berbagai perangkat.",
+    category: "Testing",
+    icon: User,
+    relatedIds: [3, 5],
+    status: "pending",
+    energy: 30,
+  },
+  {
+    id: 5,
+    title: "Launch",
+    date: "Phase 05",
+    content: "Deployment aplikasi ke server production. Perilisan resmi produk digital Anda ke publik.",
+    category: "Release",
+    icon: Clock,
+    relatedIds: [4, 6],
+    status: "pending",
+    energy: 10,
+  },
+  {
+    id: 6,
+    title: "Maintenance",
+    date: "Phase 06",
+    content: "Dukungan berkelanjutan dan pembaruan sistem. Memastikan produk Anda tetap aman, cepat, dan relevan.",
+    category: "Maintenance",
+    icon: CheckCircle,
+    relatedIds: [5],
+    status: "pending",
+    energy: 5,
+  },
 ];
 
 export function Process() {
@@ -17,47 +78,15 @@ export function Process() {
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:64px_64px]"></div>
       
       <div className="container relative z-10 mx-auto px-4 sm:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">The Development Lifecycle</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 text-white">The Development Lifecycle</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg tracking-tight">
-            A precise, iterative process engineered for velocity and quality.
+            A precise, iterative process engineered for velocity and quality. Klik tiap fase di orbit untuk melihat detail alur kerja kami.
           </p>
         </div>
 
-        <div className="relative max-w-3xl mx-auto">
-          {/* Subtle Connector Line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2"></div>
-
-          <div className="space-y-16">
-            {steps.map((step, index) => (
-              <motion.div 
-                key={index}
-                className={`relative flex flex-col md:flex-row items-start md:items-center ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="hidden md:block w-1/2"></div>
-                
-                {/* Minimalist Node */}
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#111] border border-white/20 z-10 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/50"></div>
-                </div>
-
-                <div className={`ml-16 md:ml-0 md:w-1/2 p-6 rounded-xl bg-white/[0.02] border border-white/5 backdrop-blur-sm ${
-                  index % 2 === 0 ? "md:mr-12" : "md:ml-12"
-                }`}>
-                  <div className="text-white/40 font-mono text-xs mb-2">PHASE {step.id}</div>
-                  <h3 className="text-xl font-bold tracking-tight mb-2 text-foreground/90">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm">{step.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {/* Radial Orbital Timeline Integration */}
+        <RadialOrbitalTimeline timelineData={timelineData} />
       </div>
     </section>
   );

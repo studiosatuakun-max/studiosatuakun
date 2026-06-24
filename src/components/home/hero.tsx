@@ -91,7 +91,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p 
-          className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto text-balance leading-relaxed tracking-tight"
+          className="text-lg md:text-xl text-muted-foreground mb-10 max-w-4xl mx-auto text-balance leading-relaxed tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -101,21 +101,21 @@ export function Hero() {
         </motion.p>
 
         <motion.div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 mt-4"
+          className="flex flex-row items-center justify-center mt-4 w-full px-4 sm:w-auto sm:px-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{ transform: "translateZ(60px)" }}
         >
-          <Link href="/contact">
-            <Button size="lg" className="w-full sm:w-auto gap-3 group text-xl tracking-wide shadow-none bg-transparent">
-              Start a Project 
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          <Link href="/contact" className="flex-1 sm:flex-none">
+            <Button size="lg" className="w-full gap-1.5 sm:gap-3 group text-sm sm:text-xl tracking-wide shadow-none bg-transparent rounded-none border-y border-l sm:border-y-0 sm:border-x border-white/20 hover:bg-white/5 h-14 sm:h-16 px-1 sm:px-8">
+              <span className="truncate">Start a Project</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1 shrink-0" />
             </Button>
           </Link>
-          <Link href="/portfolio">
-            <Button size="lg" variant="outline" className="w-full sm:w-auto text-xl tracking-wide hover:bg-transparent shadow-none bg-transparent sm:border-l-0">
-              View Our Work
+          <Link href="/portfolio" className="flex-1 sm:flex-none">
+            <Button size="lg" variant="outline" className="w-full text-sm sm:text-xl tracking-wide hover:bg-transparent shadow-none bg-transparent rounded-none border-y border-l border-r sm:border-y-0 sm:border-l-0 sm:border-r border-white/20 hover:bg-white/5 h-14 sm:h-16 px-1 sm:px-8">
+              <span className="truncate">View Our Work</span>
             </Button>
           </Link>
         </motion.div>
