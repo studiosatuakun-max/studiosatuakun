@@ -40,8 +40,8 @@ export function CentralHubView() {
 
           {/* Lines from Center to Nodes */}
           {nodes.map((node, i) => {
-            const x = Math.cos((node.angle * Math.PI) / 180) * radius;
-            const y = Math.sin((node.angle * Math.PI) / 180) * radius;
+            const x = (Math.cos((node.angle * Math.PI) / 180) * radius).toFixed(2);
+            const y = (Math.sin((node.angle * Math.PI) / 180) * radius).toFixed(2);
             return (
               <g key={`line-core-${i}`}>
                 {/* Thick glow line */}
@@ -87,10 +87,10 @@ export function CentralHubView() {
           {/* Pentagon connecting outer hubs */}
           {nodes.map((node, i) => {
             const nextNode = nodes[(i + 1) % nodes.length];
-            const x1 = Math.cos((node.angle * Math.PI) / 180) * radius;
-            const y1 = Math.sin((node.angle * Math.PI) / 180) * radius;
-            const x2 = Math.cos((nextNode.angle * Math.PI) / 180) * radius;
-            const y2 = Math.sin((nextNode.angle * Math.PI) / 180) * radius;
+            const x1 = (Math.cos((node.angle * Math.PI) / 180) * radius).toFixed(2);
+            const y1 = (Math.sin((node.angle * Math.PI) / 180) * radius).toFixed(2);
+            const x2 = (Math.cos((nextNode.angle * Math.PI) / 180) * radius).toFixed(2);
+            const y2 = (Math.sin((nextNode.angle * Math.PI) / 180) * radius).toFixed(2);
             
             return (
               <g key={`line-outer-${i}`}>
@@ -127,8 +127,8 @@ export function CentralHubView() {
 
         {/* Orbiting/Connected Nodes */}
         {nodes.map((node, i) => {
-          const x = Math.cos((node.angle * Math.PI) / 180) * radius;
-          const y = Math.sin((node.angle * Math.PI) / 180) * radius;
+          const x = (Math.cos((node.angle * Math.PI) / 180) * radius).toFixed(2);
+          const y = (Math.sin((node.angle * Math.PI) / 180) * radius).toFixed(2);
 
           return (
             <motion.div 

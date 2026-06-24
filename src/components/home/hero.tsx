@@ -7,6 +7,11 @@ import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { CentralHubView, CodeToUIView, WebsiteView, AppView, SoftwareView } from "./hero-mockups";
+import dynamic from "next/dynamic";
+
+const AbstractOrbs = dynamic(() => import("../ui/abstract-orbs").then(mod => mod.AbstractOrbs), {
+  ssr: false,
+});
 
 export function Hero() {
   // Utility to split text into characters for a "pixel-perfect" staggered reveal
@@ -47,6 +52,9 @@ export function Hero() {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-background" style={{ perspective: 1200 }}>
+      {/* 3D Abstract Liquid Orbs Background */}
+      <AbstractOrbs />
+
       {/* Vercel-style subtle grid background */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
       

@@ -30,13 +30,13 @@ export function CTA() {
 
           {/* Minimalist Heading */}
           <motion.h2 
-            className="text-5xl md:text-8xl font-bold mb-8 tracking-tighter text-white leading-tight"
+            className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter text-white leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Let's build something <br className="hidden md:block"/> <span className="text-white/40 italic font-normal tracking-normal" style={{ fontFamily: "'Times New Roman MT', 'Times New Roman', serif" }}>extraordinary.</span>
+            Let's build something <br /> <span className="text-white/40 italic font-normal tracking-normal" style={{ fontFamily: "'Times New Roman MT', 'Times New Roman', serif" }}>extraordinary.</span>
           </motion.h2>
 
           {/* Subheading */}
@@ -57,11 +57,13 @@ export function CTA() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Link 
-              href="/contact"
+              href="https://wa.me/6282260880878?text=Halo%20Studio%20Satu%20Akun,%20saya%20ingin%20konsultasi%20mengenai%20project%20saya."
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center gap-3 h-16 px-12 bg-transparent text-white font-semibold text-2xl transition-all active:scale-95 border-x border-white/20 hover:border-white/60"
             >
               <span className="relative z-10 flex items-center gap-3">
-                Start a Conversation
+                Gratis Konsultasi
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </Link>
