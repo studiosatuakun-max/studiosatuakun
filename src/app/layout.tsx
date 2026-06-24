@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     description: "Premium digital solutions for your business growth.",
     images: ["/og.png"],
   },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
