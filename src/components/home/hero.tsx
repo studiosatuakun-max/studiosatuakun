@@ -9,6 +9,21 @@ import Image from "next/image";
 import { CentralHubView, CodeToUIView, WebsiteView, AppView, SoftwareView } from "./hero-mockups";
 
 export function Hero() {
+  // Utility to split text into characters for a "pixel-perfect" staggered reveal
+  const splitText = (text: string, delayOffset: number = 0) => {
+    return text.split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{ duration: 0.5, delay: delayOffset + index * 0.05, ease: "easeOut" }}
+        className="inline-block"
+      >
+        {char === " " ? "\u00A0" : char}
+      </motion.span>
+    ));
+  };
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -68,13 +83,11 @@ export function Hero() {
         </motion.div>
 
         <motion.h1 
-          className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-balance text-gradient drop-shadow-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-balance drop-shadow-2xl flex flex-col sm:flex-row flex-wrap justify-center gap-x-4 gap-y-2"
           style={{ transform: "translateZ(80px)" }}
         >
-          Crafting Digital Products That Drive Growth
+          <span className="flex text-white">{splitText("Crafting Digital")}</span>
+          <span className="flex text-white/40 italic font-serif">{splitText("Products.", 0.8)}</span>
         </motion.h1>
 
         <motion.p 
