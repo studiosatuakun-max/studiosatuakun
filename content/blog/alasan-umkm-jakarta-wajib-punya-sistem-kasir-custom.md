@@ -1,6 +1,7 @@
 ---
 title: "5 Alasan UMKM di Jakarta Wajib Memiliki Sistem Kasir Custom"
 date: "2026-06-24"
+coverImage: "/blog/pos-system.png"
 excerpt: "Tinggalkan sistem POS pasaran. Ketahui mengapa sistem kasir custom adalah kunci rahasia untuk UMKM dan bisnis F&B di Jakarta agar bisa bersaing dan berekspansi dengan cepat."
 ---
 

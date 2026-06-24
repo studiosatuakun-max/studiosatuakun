@@ -1,6 +1,7 @@
 ---
 title: "Cara Memilih Software House Terpercaya di Bandung dan Surabaya"
 date: "2026-06-24"
+coverImage: "/blog/software-house.png"
 excerpt: "Jangan salah pilih vendor IT! Simak panduan komprehensif cara menyeleksi software house dan web developer terbaik di kota besar seperti Bandung dan Surabaya untuk proyek digital Anda."
 ---
 

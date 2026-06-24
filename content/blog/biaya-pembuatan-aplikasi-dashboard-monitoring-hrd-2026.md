@@ -1,6 +1,7 @@
 ---
 title: "Berapa Biaya Pembuatan Aplikasi Dashboard Monitoring untuk HRD di 2026?"
 date: "2026-06-24"
+coverImage: "/blog/hr-dashboard.png"
 excerpt: "Panduan lengkap mengenai estimasi biaya, fitur esensial, dan manfaat pembuatan aplikasi dashboard monitoring custom untuk departemen HRD di tahun 2026."
 ---
 
