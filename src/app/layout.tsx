@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Studio Satu Akun",
     images: [
       {
-        url: "/og.png",
+        url: "https://studiosatuakun.id/og.png",
         width: 1200,
         height: 630,
         alt: "Studio Satu Akun - Premium Digital Products",
@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Studio Satu Akun | Jasa Pembuatan Website & Software Custom",
     description: "Premium digital solutions for your business growth.",
-    images: ["/og.png"],
+    images: ["https://studiosatuakun.id/og.png"],
   },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/icon.png?v=2",
+    shortcut: "/icon.png?v=2",
+    apple: "/icon.png?v=2",
   },
 };
 
