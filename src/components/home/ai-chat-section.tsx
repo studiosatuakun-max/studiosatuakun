@@ -11,7 +11,7 @@ export function AiChatSection() {
   const [inputValue, setInputValue] = useState('');
   
   // @ts-ignore - Vercel AI SDK type mismatch workaround
-  const { messages, append, status } = useChat();
+  const { messages, sendMessage, status } = useChat();
   const isLoading = status === 'streaming' || status === 'submitted';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value);
@@ -21,7 +21,7 @@ export function AiChatSection() {
     if (!inputValue?.trim() || isLoading) return;
     
     // @ts-ignore
-    append({ role: 'user', content: inputValue });
+    sendMessage({ role: 'user', content: inputValue, text: inputValue, parts: [{ type: 'text', text: inputValue }] });
     setInputValue('');
   };
 
