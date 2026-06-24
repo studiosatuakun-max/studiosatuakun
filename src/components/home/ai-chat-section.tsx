@@ -11,7 +11,7 @@ export function AiChatSection() {
   const [input, setInput] = useState('');
   
   // @ts-ignore - Vercel AI SDK type mismatch workaround
-  const { messages, sendMessage, status } = useChat();
+  const { messages, append, status } = useChat();
   const isLoading = status === 'streaming' || status === 'submitted';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value);
@@ -19,7 +19,7 @@ export function AiChatSection() {
     e.preventDefault();
     if (!input?.trim() || isLoading) return;
     // @ts-ignore
-    sendMessage({ role: 'user', text: input, content: input, parts: [{ type: 'text', text: input }] });
+    append({ role: 'user', content: input });
     setInput('');
   };
 
@@ -74,7 +74,7 @@ export function AiChatSection() {
 
         {/* Chat Interface Container */}
         <div className={`mx-auto bg-[#0c0c0c] border border-white/10 shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 ease-in-out flex ${
-          isExpanded ? 'w-full max-w-7xl h-[800px] flex-row' : 'w-full max-w-5xl h-[650px] flex-col'
+          isExpanded ? 'w-full max-w-7xl h-[600px] flex-row' : 'w-full max-w-5xl h-[500px] flex-col'
         }`}>
           
           {/* Chat Area */}
@@ -100,7 +100,7 @@ export function AiChatSection() {
               )}
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {messages.length === 0 && (
                 <div className="text-center mt-10 opacity-70">
                   <Bot className="w-10 h-10 mx-auto text-yellow-500 mb-4 opacity-50" />
