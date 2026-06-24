@@ -11,7 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://studiosatuakun.id"),
   title: "Studio Satu Akun | Premium Software House & Web Development",
   description: "Premium Software House yang menyediakan jasa pembuatan website, aplikasi mobile, dan software custom untuk digitalisasi UMKM dan perusahaan lokal di Indonesia.",
-  keywords: ["Jasa Pembuatan Website", "Jasa Pembuatan Software", "Web Developer Lokal", "Jasa Bikin Aplikasi", "Software House Indonesia", "Konsultan IT Lokal", "Jasa Pembuatan Web Custom"],
+  keywords: [
+    // Core Services
+    "Jasa Pembuatan Website", "Jasa Pembuatan Software", "Jasa Bikin Aplikasi", "Jasa Pembuatan Web Custom", "Web Developer Lokal", "Konsultan IT Lokal",
+    // Specific Niches
+    "Jasa Pembuatan Aplikasi", "Aplikasi Mobile", "Jasa Pembuatan Dashboard Monitoring", "Dashboard Monitoring Data", "AI Automation",
+    // Local / Cities
+    "Software House Indonesia", "Software House Jakarta", "Software House Bandung", "Software House Surabaya", "Software House Bali", "Software House Medan", "Jasa Web Developer Jakarta"
+  ],
   openGraph: {
     title: "Studio Satu Akun | Premium Software House & Web Development",
     description: "Premium Software House yang menyediakan jasa pembuatan website, aplikasi mobile, dan software custom untuk digitalisasi UMKM dan perusahaan lokal di Indonesia.",
