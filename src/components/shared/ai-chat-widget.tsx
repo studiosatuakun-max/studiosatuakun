@@ -19,11 +19,19 @@ export function AiChatWidget() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  const getMessageText = (m: any) => {
+    if (m.content) return m.content;
+    if (m.parts) return m.parts.map((p: any) => p.type === 'text' ? p.text : '').join('');
+    if (m.text) return m.text;
+    return '';
+  };
+
   // Look for the latest generated HTML to preview
   const latestHtmlCode = messages
     .filter(m => m.role === 'assistant')
     .map(m => {
-      const match = m.content.match(/```html\n([\s\S]*?)\n```/);
+      const text = getMessageText(m);
+      const match = text.match(/```html\n([\s\S]*?)\n```/);
       return match ? match[1] : null;
     })
     .filter(Boolean)
@@ -138,7 +146,7 @@ export function AiChatWidget() {
                             }
                           }}
                         >
-                          {m.content}
+                          {getMessageText(m)}
                         </ReactMarkdown>
                       </div>
                     </div>
