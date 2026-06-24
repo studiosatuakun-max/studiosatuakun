@@ -9,9 +9,7 @@ export function AiChatSection() {
   const [isExpanded, setIsExpanded] = useState(false);
   
   // @ts-ignore - Vercel AI SDK type mismatch workaround
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
-    initialInput: ''
-  });
+  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
