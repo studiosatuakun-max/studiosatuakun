@@ -30,7 +30,7 @@ export function CTA() {
 
           {/* Minimalist Heading */}
           <motion.h2 
-            className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter text-white leading-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 tracking-tighter text-white leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,7 +60,7 @@ export function CTA() {
               href="https://wa.me/6282260880878?text=Halo%20Studio%20Satu%20Akun,%20saya%20ingin%20konsultasi%20mengenai%20project%20saya."
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center gap-3 h-16 px-12 bg-transparent text-white font-semibold text-2xl transition-all active:scale-95 border-x border-white/20 hover:border-white/60"
+              className="group relative inline-flex items-center justify-center gap-3 h-14 md:h-16 px-6 md:px-12 bg-transparent text-white font-semibold text-lg md:text-2xl transition-all active:scale-95 border-x border-white/20 hover:border-white/60"
             >
               <span className="relative z-10 flex items-center gap-3">
                 Gratis Konsultasi

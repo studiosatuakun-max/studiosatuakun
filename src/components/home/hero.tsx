@@ -52,8 +52,10 @@ export function Hero() {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-background" style={{ perspective: 1200 }}>
-      {/* 3D Abstract Liquid Orbs Background */}
-      <AbstractOrbs />
+      {/* 3D Abstract Liquid Orbs Background (Hidden on Mobile for performance) */}
+      <div className="hidden md:block">
+        <AbstractOrbs />
+      </div>
 
       {/* Vercel-style subtle grid background */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
