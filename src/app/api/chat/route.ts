@@ -24,13 +24,36 @@ Always respond in Indonesian.
       system: systemPrompt,
     });
 
-    return result.toTextStreamResponse();
+    // Manually construct the stream from textStream for maximum compatibility
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          for await (const chunk of result.textStream) {
+            controller.enqueue(encoder.encode(chunk));
+          }
+          controller.close();
+        } catch (streamError) {
+          console.error('[API /chat] Stream error:', streamError);
+          const msg = streamError instanceof Error ? streamError.message : 'Stream failed';
+          controller.enqueue(encoder.encode(`\n\n⚠️ Stream Error: ${msg}`));
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Transfer-Encoding': 'chunked',
+      },
+    });
   } catch (error: unknown) {
     console.error('[API /chat] Error:', error);
     const message = error instanceof Error ? error.message : 'Unknown error';
-    return new Response(JSON.stringify({ error: message }), {
+    return new Response(`⚠️ API Error: ${message}`, {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
     });
   }
 }
