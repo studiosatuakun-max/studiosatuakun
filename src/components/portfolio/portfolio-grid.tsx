@@ -7,11 +7,12 @@ import { ArrowUpRight } from "lucide-react";
 
 const categories = ["All", "Website", "Mobile App", "SaaS", "Dashboard", "Marketplace", "Web App"];
 
-import { ProjectMockup } from "./project-mockups";
+import Image from "next/image";
 
 const portfolioData = [
   {
     title: "Jasurd.com",
+    image: "/portfolio/jasurd-com.png",
     category: "Marketplace",
     description: "Marketplace jasa absurd dengan fitur transaksi aman dan real-time chat.",
     tech: ["Next.js", "Supabase", "Tailwind"],
@@ -22,6 +23,7 @@ const portfolioData = [
   },
   {
     title: "SkorAkhir.com",
+    image: "/portfolio/skor-akhir.png",
     category: "Website",
     description: "Portal berita olahraga berbasis link affiliate dengan performa tinggi & SEO optimized.",
     tech: ["Next.js", "Sanity CMS", "Redis"],
@@ -32,6 +34,7 @@ const portfolioData = [
   },
   {
     title: "Smart Tender",
+    image: "/portfolio/smart-tender.png",
     category: "Dashboard",
     description: "Smart dashboard untuk Project dan Tender monitoring yang terintegrasi.",
     tech: ["React", "Node.js", "PostgreSQL"],
@@ -42,6 +45,7 @@ const portfolioData = [
   },
   {
     title: "Selfify.id",
+    image: "/portfolio/selfify-id.png",
     category: "Web App",
     description: "Safe space portal untuk kesehatan mental dan komunitas.",
     tech: ["Next.js", "Firebase", "Framer Motion"],
@@ -52,6 +56,7 @@ const portfolioData = [
   },
   {
     title: "Smart POS",
+    image: "/portfolio/smart-pos.png",
     category: "SaaS",
     description: "Sistem Point of Sales cerdas dengan manajemen inventaris dan laporan real-time.",
     tech: ["Next.js", "Supabase", "Prisma"],
@@ -62,12 +67,13 @@ const portfolioData = [
   },
   {
     title: "vitation.id",
+    image: "/portfolio/vitation-id.png",
     category: "SaaS",
     description: "SaaS Digital Invitation Generator untuk pembuatan undangan interaktif yang elegan.",
     tech: ["Next.js", "Tailwind", "PostgreSQL"],
     industry: "Events & Lifestyle",
     slug: "vitation",
-    year: "2026",
+    year: "2024",
     link: "https://vitation.id",
   },
 ];
@@ -161,7 +167,7 @@ export function PortfolioGrid() {
                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-0"></div>
                      
                      <div className="w-full h-full rounded-t-xl border border-white/10 border-b-0 bg-[#161616] shadow-2xl translate-y-8 group-hover:translate-y-4 transition-transform duration-500 relative z-10 overflow-hidden">
-                       <ProjectMockup title={project.title} />
+                       <Image src={project.image} alt={project.title} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
                      </div>
                   </div>
                 </div>
