@@ -167,15 +167,15 @@ function PortfolioCard({ project, index }: { project: any, index: number }) {
         </div>
 
         {/* Text Content */}
-        <div className="p-6 bg-[#0a0a0a] border border-white/10 rounded-b-xl flex-grow z-20" style={{ transform: "translateZ(30px)" }}>
+        <div className="p-6 bg-[#0a0a0a] border border-white/10 rounded-b-xl flex-grow flex flex-col z-20" style={{ transform: "translateZ(30px)" }}>
           <div className="flex justify-between items-start mb-3" style={{ transform: "translateZ(10px)" }}>
             <h3 className="text-xl font-bold tracking-tight group-hover:text-white transition-colors">{project.title}</h3>
             <span className="text-xs font-mono text-muted-foreground bg-white/5 px-2 py-1 rounded-md border border-white/5">{project.category}</span>
           </div>
-          <p className="text-muted-foreground text-sm mb-6" style={{ transform: "translateZ(5px)" }}>
+          <p className="text-muted-foreground text-sm mb-6 line-clamp-2" style={{ transform: "translateZ(5px)" }}>
             {project.description}
           </p>
-          <div className="flex gap-2" style={{ transform: "translateZ(15px)" }}>
+          <div className="flex flex-wrap gap-2 mt-auto" style={{ transform: "translateZ(15px)" }}>
             {project.tech.map((t: string, idx: number) => (
               <span key={idx} className="text-[10px] uppercase tracking-wider font-mono text-muted-foreground">
                 {t}{idx < project.tech.length - 1 && <span className="mx-2 text-white/20">/</span>}

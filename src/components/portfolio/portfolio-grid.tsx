@@ -167,7 +167,7 @@ export function PortfolioGrid() {
                 </div>
 
                 {/* Text Content */}
-                <div className="p-6 border border-white/10 rounded-b-xl flex-grow z-10 bg-[#0a0a0a]">
+                <div className="p-6 border border-white/10 rounded-b-xl flex-grow z-10 bg-[#0a0a0a] flex flex-col">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-bold tracking-tight group-hover:text-white transition-colors">{project.title}</h3>
                     <span className="text-[10px] font-mono text-muted-foreground">{project.category}</span>
@@ -175,7 +175,7 @@ export function PortfolioGrid() {
                   <p className="text-muted-foreground text-sm mb-6 line-clamp-2">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tech.map((t, idx) => (
                       <span key={idx} className="text-[10px] uppercase tracking-wider font-mono text-muted-foreground">
                         {t}{idx < project.tech.length - 1 && <span className="mx-2 text-white/20">/</span>}
