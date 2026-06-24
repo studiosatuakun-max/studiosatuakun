@@ -5,6 +5,7 @@ import { FeaturedPortfolio } from "@/components/home/featured-portfolio";
 import { Process } from "@/components/home/process";
 import { LatestInsights } from "@/components/home/latest-insights";
 import { CTA } from "@/components/home/cta";
+import { AiChatWidget } from "@/components/shared/ai-chat-widget";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Process />
       <LatestInsights />
       <CTA />
+      <AiChatWidget />
     </>
   );
 }
