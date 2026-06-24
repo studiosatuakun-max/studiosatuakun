@@ -74,7 +74,7 @@ export function AiChatSection() {
 
         {/* Chat Interface Container */}
         <div className={`mx-auto bg-[#0c0c0c] border border-white/10 shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 ease-in-out flex ${
-          isExpanded ? 'w-full max-w-7xl h-[800px] flex-row' : 'w-full max-w-3xl h-[600px] flex-col'
+          isExpanded ? 'w-full max-w-7xl h-[800px] flex-row' : 'w-full max-w-5xl h-[650px] flex-col'
         }`}>
           
           {/* Chat Area */}

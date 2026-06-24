@@ -13,10 +13,10 @@ export default function Home() {
       <Hero />
       <Trust />
       <Services />
+      <AiChatSection />
       <FeaturedPortfolio />
       <Process />
       <LatestInsights />
-      <AiChatSection />
       <CTA />
     </>
   );
