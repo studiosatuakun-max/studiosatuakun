@@ -19,10 +19,11 @@ function Orbs() {
     <group ref={group}>
       <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
         <mesh position={[1, 0.5, 0]}>
-          <sphereGeometry args={[1.5, 64, 64]} />
+          <sphereGeometry args={[1.5, 32, 32]} />
           <MeshTransmissionMaterial
             backside
-            samples={4}
+            resolution={128}
+            samples={3}
             thickness={2}
             chromaticAberration={0.025}
             anisotropy={0.1}
@@ -38,10 +39,11 @@ function Orbs() {
 
       <Float speed={2} rotationIntensity={1.5} floatIntensity={1.5}>
         <mesh position={[-2, -1, -2]}>
-          <sphereGeometry args={[1, 64, 64]} />
+          <sphereGeometry args={[1, 32, 32]} />
           <MeshTransmissionMaterial
             backside
-            samples={4}
+            resolution={128}
+            samples={3}
             thickness={1}
             chromaticAberration={0.05}
             color="#eab308" // yellow-500
@@ -53,10 +55,11 @@ function Orbs() {
 
       <Float speed={1} rotationIntensity={2} floatIntensity={2.5}>
         <mesh position={[-1.5, 1.5, -1]}>
-          <sphereGeometry args={[1.2, 64, 64]} />
+          <sphereGeometry args={[1.2, 32, 32]} />
           <MeshTransmissionMaterial
             backside
-            samples={4}
+            resolution={128}
+            samples={3}
             thickness={1.5}
             chromaticAberration={0.05}
             color="#94a3b8" // slate-400 for reflection
@@ -74,7 +77,7 @@ import { Suspense } from "react";
 export function AbstractOrbs() {
   return (
     <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
-      <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1.5} color="#facc15" />
         <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#ffffff" />

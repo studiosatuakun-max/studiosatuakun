@@ -41,7 +41,7 @@ export function CTA() {
 
           {/* Subheading */}
           <motion.p 
-            className="text-white/40 text-lg md:text-2xl mb-14 tracking-tight max-w-2xl"
+            className="text-white/40 text-lg md:text-2xl mb-14 tracking-tight max-w-4xl lg:max-w-none"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
