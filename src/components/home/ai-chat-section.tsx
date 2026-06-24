@@ -49,8 +49,13 @@ export function AiChatSection() {
         }),
       });
 
-      if (!res.ok || !res.body) {
-        throw new Error('Failed to fetch AI response');
+      if (!res.ok) {
+        const errorData = await res.text();
+        throw new Error(`Server error (${res.status}): ${errorData}`);
+      }
+
+      if (!res.body) {
+        throw new Error('Response body is empty');
       }
 
       // Read the text stream
@@ -73,16 +78,31 @@ export function AiChatSection() {
           prev.map(m => m.id === assistantId ? { ...m, content: fullText } : m)
         );
       }
+
+      // If stream finished but no content was received
+      if (!fullText.trim()) {
+        setMessages(prev =>
+          prev.map(m => m.id === assistantId ? { ...m, content: 'AI tidak memberikan respons. Silakan coba lagi.' } : m)
+        );
+      }
     } catch (error) {
       console.error('Chat error:', error);
-      setMessages(prev => [
-        ...prev,
-        {
-          id: assistantId,
-          role: 'assistant',
-          content: 'Maaf, terjadi kesalahan saat menghubungi AI. Silakan coba lagi.',
-        },
-      ]);
+      const errorMsg = error instanceof Error ? error.message : 'Unknown error';
+      setMessages(prev => {
+        // Check if assistant message already exists
+        const hasAssistant = prev.some(m => m.id === assistantId);
+        if (hasAssistant) {
+          return prev.map(m => m.id === assistantId ? { ...m, content: `⚠️ Error: ${errorMsg}` } : m);
+        }
+        return [
+          ...prev,
+          {
+            id: assistantId,
+            role: 'assistant' as const,
+            content: `⚠️ Error: ${errorMsg}`,
+          },
+        ];
+      });
     } finally {
       setIsLoading(false);
     }
