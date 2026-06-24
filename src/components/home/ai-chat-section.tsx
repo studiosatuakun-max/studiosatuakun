@@ -19,7 +19,7 @@ export function AiChatSection() {
     e.preventDefault();
     if (!input?.trim() || isLoading) return;
     // @ts-ignore
-    sendMessage(input);
+    sendMessage({ role: 'user', text: input, content: input, parts: [{ type: 'text', text: input }] });
     setInput('');
   };
 
