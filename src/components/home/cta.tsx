@@ -3,71 +3,60 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Button } from "../shared/button";
 
 export function CTA() {
   return (
-    <section className="py-32 md:py-48 relative bg-[#020202] border-t border-white/5 overflow-hidden flex items-center justify-center">
-      {/* Subtle minimalist border gradient and glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-[150px] bg-yellow-400/5 blur-[100px] pointer-events-none"></div>
+    <section className="pt-32 pb-16 relative bg-background border-t border-slate-800 overflow-hidden flex flex-col items-center justify-center">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[200px] bg-primary/5 blur-[120px] pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 sm:px-8">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-8 z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-center"
+        >
           {/* Status Indicator */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.02] border border-white/5 mb-10"
-          >
+          <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 mb-12">
             <div className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </div>
-            <span className="text-xs font-medium text-white/60 tracking-wider uppercase">Available for new projects</span>
-          </motion.div>
+            <span className="text-xs font-medium text-slate-300 tracking-wider uppercase">Tersedia Untuk Projek Baru</span>
+          </div>
 
-          {/* Minimalist Heading */}
-          <motion.h2 
-            className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 tracking-tighter text-white leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Let's build something <br /> <span className="text-white/40 italic font-normal tracking-normal" style={{ fontFamily: "'Times New Roman MT', 'Times New Roman', serif" }}>extraordinary.</span>
-          </motion.h2>
+          {/* Massive Typography CTA */}
+          <h2 className="text-[12vw] sm:text-[10vw] md:text-[8rem] font-black tracking-tighter text-foreground leading-[0.85] mb-12 uppercase">
+            MARI <br className="md:hidden" /> MULAI
+          </h2>
 
-          {/* Subheading */}
-          <motion.p 
-            className="text-white/40 text-lg md:text-2xl mb-14 tracking-tight max-w-4xl lg:max-w-none"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Transform your visionary ideas into high-performance digital products. 
-          </motion.p>
+          <p className="text-muted-foreground text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium">
+            Wujudkan visi digital Anda menjadi kenyataan dengan tim engineering terbaik.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <Link 
+            href="https://wa.me/6282260880878?text=Halo%20Studio%20Satu%20Akun,%20saya%20ingin%20konsultasi%20mengenai%20project%20saya."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
           >
-            <Link 
-              href="https://wa.me/6282260880878?text=Halo%20Studio%20Satu%20Akun,%20saya%20ingin%20konsultasi%20mengenai%20project%20saya."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center gap-3 h-14 md:h-16 px-6 md:px-12 bg-transparent text-white font-semibold text-lg md:text-2xl transition-all active:scale-95 border-x border-white/20 hover:border-white/60"
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                Gratis Konsultasi
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Link>
-          </motion.div>
+            <Button size="lg" className="h-16 px-10 text-lg bg-primary text-primary-foreground hover:bg-primary/90 rounded-full group active:scale-95 transition-all w-full sm:w-auto shadow-xl shadow-primary/20">
+              Gratis Konsultasi
+              <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+        </motion.div>
+
+        {/* Simple Footer built-in */}
+        <div className="mt-40 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
+          <p>© {new Date().getFullYear()} PT Studio Satu Akun. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="#" className="hover:text-primary transition-colors">Instagram</Link>
+            <Link href="#" className="hover:text-primary transition-colors">LinkedIn</Link>
+            <Link href="#" className="hover:text-primary transition-colors">GitHub</Link>
+          </div>
         </div>
       </div>
     </section>

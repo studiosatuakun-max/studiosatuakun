@@ -1,11 +1,11 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "../shared/button";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-
 import Image from "next/image";
+import { useState } from "react";
 
 const portfolioData = [
   {
@@ -27,15 +27,6 @@ const portfolioData = [
     link: "https://skorakhir.com",
   },
   {
-    title: "Smart Tender",
-    image: "/portfolio/smart-tender.png",
-    category: "Dashboard",
-    description: "Smart dashboard untuk Project dan Tender monitoring yang terintegrasi.",
-    tech: ["React", "Node.js", "PostgreSQL"],
-    industry: "Construction & B2B",
-    link: "https://tender-intelligence-project-managem.vercel.app/",
-  },
-  {
     title: "Selfify.id",
     image: "/portfolio/selfify-id.png",
     category: "Web App",
@@ -53,143 +44,115 @@ const portfolioData = [
     industry: "Retail & F&B",
     link: "https://greennagan-deels-projects.vercel.app/",
   },
-  {
-    title: "vitation.id",
-    image: "/portfolio/vitation-id.png",
-    category: "SaaS",
-    description: "SaaS Digital Invitation Generator untuk pembuatan undangan interaktif yang elegan.",
-    tech: ["Next.js", "Tailwind", "PostgreSQL"],
-    industry: "Events & Lifestyle",
-    link: "https://vitation.id",
-  },
 ];
 
 export function FeaturedPortfolio() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section className="py-24 relative border-t border-white/5">
-      <div className="container mx-auto px-4 sm:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">Selected Works</h2>
-            <p className="text-muted-foreground text-lg tracking-tight">
-              A showcase of robust applications designed for scale and conversion.
-            </p>
+    <section className="py-32 relative bg-background border-t border-white/5">
+      <div className="container mx-auto px-4 sm:px-8 max-w-7xl">
+        <div className="flex flex-col md:flex-row gap-12 lg:gap-24">
+          {/* Left Column - Sticky Info */}
+          <div className="w-full md:w-1/3 md:sticky md:top-32 h-fit">
+            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.9]">Selected <br/> <span className="text-slate-500">Works.</span></h2>
+            
+            <div className="hidden md:block min-h-[300px]">
+               <motion.div
+                 key={activeIndex}
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.5 }}
+               >
+                 <span className="text-xs font-mono text-primary bg-primary/10 px-3 py-1.5 rounded-full mb-6 inline-block tracking-widest uppercase">
+                    {portfolioData[activeIndex].category}
+                 </span>
+                 <h3 className="text-4xl font-bold mb-4 text-foreground">{portfolioData[activeIndex].title}</h3>
+                 <p className="text-muted-foreground text-lg mb-8 leading-relaxed">{portfolioData[activeIndex].description}</p>
+                 <div className="flex flex-wrap gap-2 mb-10">
+                    {portfolioData[activeIndex].tech.map((t, i) => (
+                      <span key={i} className="text-xs uppercase tracking-widest font-medium px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-slate-300">
+                        {t}
+                      </span>
+                    ))}
+                 </div>
+                 <Link href={portfolioData[activeIndex].link} target="_blank">
+                    <Button variant="outline" className="gap-2 rounded-full border-white/20 hover:bg-white/5 active:scale-95 transition-all h-12 px-6">
+                      Visit Site <ArrowUpRight className="w-4 h-4" />
+                    </Button>
+                 </Link>
+               </motion.div>
+            </div>
+            
+            {/* View All Mobile */}
+            <div className="mt-8 md:hidden">
+              <Link href="/portfolio" className="w-full">
+                <Button variant="outline" className="w-full gap-2 rounded-full h-14 text-base border-white/20 hover:bg-white/5 active:scale-95 transition-all">
+                  View All Projects <ArrowUpRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
-          <Link href="/portfolio">
-            <Button variant="outline" className="hidden md:flex gap-2">
-              View All Projects <ArrowUpRight className="w-4 h-4" />
-            </Button>
-          </Link>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {portfolioData.slice(0, 4).map((project, index) => (
-            <PortfolioCard key={index} project={project} index={index} />
-          ))}
-        </div>
+          {/* Right Column - Scrollable Images */}
+          <div className="w-full md:w-2/3 flex flex-col gap-16 md:gap-32 pb-10">
+            {portfolioData.map((project, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ margin: "-20% 0px -20% 0px" }}
+                onViewportEnter={() => setActiveIndex(index)}
+                transition={{ duration: 0.6 }}
+                className="group relative"
+              >
+                {/* Mobile Info Overlay */}
+                <div className="md:hidden mb-6">
+                   <span className="text-xs font-mono text-primary bg-primary/10 px-3 py-1.5 rounded-full mb-4 inline-block tracking-widest uppercase">
+                      {project.category}
+                   </span>
+                   <h3 className="text-3xl font-bold mb-3">{project.title}</h3>
+                   <p className="text-muted-foreground text-base leading-relaxed mb-6">{project.description}</p>
+                   <Link href={project.link} target="_blank">
+                      <Button variant="outline" className="gap-2 rounded-full border-white/20 hover:bg-white/5 active:scale-95 transition-all h-12 px-6">
+                        Visit Site <ArrowUpRight className="w-4 h-4" />
+                      </Button>
+                   </Link>
+                </div>
 
-        <div className="mt-12 md:hidden flex justify-center">
-           <Link href="/portfolio" className="w-full">
-            <Button variant="outline" className="w-full gap-2">
-              View All Projects <ArrowUpRight className="w-4 h-4" />
-            </Button>
-          </Link>
+                {/* Project Image */}
+                <a href={project.link} target="_blank" rel="noreferrer" className="block w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden bg-slate-800/50">
+                    <Image 
+                      src={project.image} 
+                      alt={project.title} 
+                      fill 
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                      sizes="(max-width: 768px) 100vw, 66vw" 
+                    />
+                  </div>
+                  {/* Floating Action Button on Hover */}
+                  <div className="absolute bottom-6 right-6 z-20 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                     <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-primary-foreground shadow-lg">
+                        <ArrowUpRight className="w-6 h-6" />
+                     </div>
+                  </div>
+                </a>
+              </motion.div>
+            ))}
+
+            {/* View All Desktop */}
+            <div className="hidden md:flex justify-center mt-10">
+               <Link href="/portfolio">
+                 <Button size="lg" variant="outline" className="gap-2 rounded-full border-white/20 hover:bg-white/5 h-16 px-10 active:scale-95 transition-all text-lg font-medium">
+                   View All Projects <ArrowUpRight className="w-5 h-5" />
+                 </Button>
+               </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function PortfolioCard({ project, index }: { project: any, index: number }) {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 30 });
-  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 30 });
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  return (
-    <motion.a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="group relative flex flex-col cursor-pointer"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      style={{ perspective: 1500 }}
-    >
-      <motion.div 
-        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="h-full w-full flex flex-col transition-all duration-300 hover:shadow-[0_40px_80px_-20px_rgba(255,255,255,0.05)] rounded-xl relative"
-      >
-        {/* Glow effect behind */}
-        <div className="absolute inset-0 bg-white/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" style={{ transform: "translateZ(-20px)" }}></div>
-        
-        {/* Dashboard Window Mockup */}
-        <div className="h-64 sm:h-80 w-full bg-[#111] rounded-t-xl border border-white/10 border-b-0 overflow-hidden relative" style={{ transform: "translateZ(20px)" }}>
-          {/* Fake Browser Header */}
-          <div className="h-10 bg-[#0a0a0a] border-b border-white/10 flex items-center px-4 gap-2 relative z-10" style={{ transform: "translateZ(10px)" }}>
-             <div className="flex gap-1.5">
-               <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shadow-[0_0_10px_rgba(239,68,68,0.6)] animate-pulse"></div>
-               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.6)] animate-pulse" style={{ animationDelay: '200ms' }}></div>
-               <div className="w-2.5 h-2.5 rounded-full bg-green-500/80 shadow-[0_0_10px_rgba(34,197,94,0.6)] animate-pulse" style={{ animationDelay: '400ms' }}></div>
-             </div>
-             <div className="ml-4 px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono text-muted-foreground border border-white/5 shadow-inner">
-               {project.title.toLowerCase().replace(/\s+/g, '-')}
-             </div>
-          </div>
-          {/* Content Area */}
-          <div className="absolute inset-x-0 bottom-0 top-10 bg-grid-white/[0.02] bg-[size:16px_16px] flex items-center justify-center pt-6 px-6" style={{ transformStyle: "preserve-3d" }}>
-             <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent z-0"></div>
-             
-             {/* App UI Representation */}
-             <div className="w-full h-full rounded-t-xl border border-white/10 border-b-0 bg-[#161616] shadow-[0_-10px_30px_rgba(0,0,0,0.5)] translate-y-8 group-hover:translate-y-4 transition-transform duration-500 relative z-10 overflow-hidden" style={{ transform: "translateZ(30px)" }}>
-               <Image src={project.image} alt={project.title} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
-             </div>
-          </div>
-        </div>
-
-        {/* Text Content */}
-        <div className="p-6 bg-[#0a0a0a] border border-white/10 rounded-b-xl flex-grow flex flex-col z-20" style={{ transform: "translateZ(30px)" }}>
-          <div className="flex justify-between items-start mb-3" style={{ transform: "translateZ(10px)" }}>
-            <h3 className="text-xl font-bold tracking-tight group-hover:text-white transition-colors">{project.title}</h3>
-            <span className="text-xs font-mono text-muted-foreground bg-white/5 px-2 py-1 rounded-md border border-white/5">{project.category}</span>
-          </div>
-          <p className="text-muted-foreground text-sm mb-6 line-clamp-2" style={{ transform: "translateZ(5px)" }}>
-            {project.description}
-          </p>
-          <div className="flex flex-wrap gap-2 mt-auto" style={{ transform: "translateZ(15px)" }}>
-            {project.tech.map((t: string, idx: number) => (
-              <span key={idx} className="text-[10px] uppercase tracking-wider font-mono text-muted-foreground">
-                {t}{idx < project.tech.length - 1 && <span className="mx-2 text-white/20">/</span>}
-              </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-    </motion.a>
   );
 }
