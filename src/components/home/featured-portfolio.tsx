@@ -120,9 +120,25 @@ export function FeaturedPortfolio() {
                    </Link>
                 </div>
 
-                {/* Project Image */}
-                <a href={project.link} target="_blank" rel="noreferrer" className="block w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Project Image wrapped in Browser Mockup */}
+                <a href={project.link} target="_blank" rel="noreferrer" className="block w-full overflow-hidden rounded-xl border border-slate-800 bg-[#0f172a] shadow-2xl relative group-hover:border-slate-700 transition-colors">
+                  {/* Browser Header */}
+                  <div className="h-10 bg-[#020617] border-b border-slate-800 flex items-center px-4 gap-4 relative z-20">
+                    {/* Traffic Lights */}
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                    </div>
+                    {/* Fake URL Bar */}
+                    <div className="flex-1 max-w-[200px] sm:max-w-sm h-6 bg-slate-900 rounded-md border border-slate-800 flex items-center px-3">
+                      <span className="text-[10px] text-slate-500 font-mono truncate">
+                        {project.link.replace(/^https?:\/\//, '')}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute inset-0 top-10 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden bg-slate-800/50">
                     <Image 
                       src={project.image} 
