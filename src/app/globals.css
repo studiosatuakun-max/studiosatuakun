@@ -21,14 +21,14 @@
 }
 
 :root {
-  --background: #0f172a; /* slate-900 */
-  --foreground: #f8fafc; /* slate-50 */
-  --primary: #facc15; /* yellow-400 */
-  --primary-foreground: #020617; /* slate-950 */
-  --secondary: #1e293b; /* slate-800 */
-  --secondary-foreground: #cbd5e1; /* slate-300 */
-  --muted: #334155; /* slate-700 */
-  --border: #334155; /* slate-700 */
+  --background: #000000; /* Pure Black */
+  --foreground: #ffffff; /* Pure White */
+  --primary: #ffffff; /* Pure White for buttons */
+  --primary-foreground: #000000; /* Black text on white buttons */
+  --secondary: #18181b; /* zinc-900 */
+  --secondary-foreground: #d4d4d8; /* zinc-300 */
+  --muted: #27272a; /* zinc-800 */
+  --border: #27272a; /* zinc-800 */
   --radius: 0.5rem;
 }
 

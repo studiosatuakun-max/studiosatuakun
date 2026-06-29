@@ -5,28 +5,28 @@ import { Globe, Smartphone, Bot, LayoutTemplate } from "lucide-react";
 
 const services = [
   {
-    icon: <Globe className="w-8 h-8 text-primary" />,
+    icon: <Globe className="w-8 h-8 text-foreground" />,
     title: "Web Architecture",
     description: "High-performance web applications built with Next.js and React. Scalable, secure, and SEO-optimized by default.",
     tags: ["Next.js", "React", "Node.js"],
     colSpan: "md:col-span-2",
   },
   {
-    icon: <Bot className="w-8 h-8 text-primary" />,
+    icon: <Bot className="w-8 h-8 text-foreground" />,
     title: "AI Agents & Automation",
     description: "Smart automation, LLM integrations, and custom AI agents built to streamline your business operations.",
     tags: ["OpenAI", "LangChain", "Gemini"],
     colSpan: "md:col-span-1",
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-primary" />,
+    icon: <Smartphone className="w-8 h-8 text-foreground" />,
     title: "Mobile Native",
     description: "Smooth, native-feeling applications for iOS and Android.",
     tags: ["Flutter", "React Native"],
     colSpan: "md:col-span-1",
   },
   {
-    icon: <LayoutTemplate className="w-8 h-8 text-primary" />,
+    icon: <LayoutTemplate className="w-8 h-8 text-foreground" />,
     title: "UI/UX Engineering",
     description: "Pixel-perfect, conversion-optimized interfaces that feel premium and intuitive to use. We don't just design, we engineer experiences.",
     tags: ["Figma", "Design Systems", "Framer"],
@@ -40,7 +40,7 @@ function ServiceCard({ service, mouseX, mouseY }: { service: any, mouseX: any, m
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      className={`group relative rounded-3xl border border-slate-800 bg-slate-900/50 p-8 overflow-hidden transition-colors hover:border-slate-700 ${service.colSpan}`}
+      className={`group relative rounded-3xl border border-slate-800 bg-zinc-900/50 p-8 overflow-hidden transition-colors hover:border-slate-700 ${service.colSpan}`}
     >
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
@@ -48,7 +48,7 @@ function ServiceCard({ service, mouseX, mouseY }: { service: any, mouseX: any, m
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              rgba(250, 204, 21, 0.1),
+              rgba(255, 255, 255, 0.05),
               transparent 80%
             )
           `,
