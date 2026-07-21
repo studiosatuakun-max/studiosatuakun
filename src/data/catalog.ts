@@ -58,25 +58,26 @@ export const TEMPLATES: CatalogTemplate[] = [
   {
     id: 'scaffold_1784613264918',
     category: 'landing-page',
-    title: 'Agency Scaffold Template',
+    title: 'Web Agency — Portfolio & Services',
     description:
-      'A modern, high-performance agency landing page built with Next.js 15 and Tailwind CSS.',
+      'Template agensi digital premium. Cocok untuk web agency, software house, atau freelancer yang ingin tampil profesional dengan portofolio, layanan, dan halaman kontak.',
     githubUrl: 'https://github.com/studiosatuakun-max/scaffold_1784613264918',
     previewUrl: '/preview/scaffold_1784613264918',
     techStack: ['Next.js 15', 'React', 'Tailwind CSS', 'Framer Motion'],
     liveDemoUrl: 'https://scaffold1784613264918.vercel.app/home',
-    imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_10e591c86-1772160867540.png',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fscaffold1784613264918.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
   {
     id: 'fade_1784619000074',
     category: 'landing-page',
-    title: 'Fade Interactive Layout',
-    description: 'A visually stunning landing page with smooth scroll and fade interactions.',
+    title: 'Barbershop 24/7 — Dark & Premium',
+    description:
+      'Template barbershop modern dengan nuansa dark premium. Dilengkapi galeri potongan, booking online, kuis rekomendasi gaya rambut, dan jadwal layanan 24/7.',
     githubUrl: 'https://github.com/studiosatuakun-max/fade_1784619000074',
     previewUrl: '/preview/fade_1784619000074',
     techStack: ['Next.js 15', 'Tailwind CSS', 'Framer Motion'],
     liveDemoUrl: 'https://fade1784619000074.vercel.app/home',
-    imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_1bceda0fa-1768299902157.png',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Ffade1784619000074.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
 ];
 
