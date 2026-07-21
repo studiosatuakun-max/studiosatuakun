@@ -1,4 +1,5 @@
-export type CategorySlug = 'landing-page' | 'web-app' | 'dashboard' | 'software-studio' | 'ai-automation';
+export type CategorySlug =
+  'landing-page' | 'web-app' | 'dashboard' | 'software-studio' | 'ai-automation';
 
 export interface CategoryInfo {
   id: CategorySlug;
@@ -37,7 +38,7 @@ export const CATEGORIES: CategoryInfo[] = [
     title: 'AI Automation',
     description: 'LLM integrations, RAG systems, and agentic workflows.',
     iconName: 'SparklesIcon',
-  }
+  },
 ];
 
 export interface CatalogTemplate {
@@ -58,11 +59,12 @@ export const TEMPLATES: CatalogTemplate[] = [
     id: 'scaffold_1784613264918',
     category: 'landing-page',
     title: 'Agency Scaffold Template',
-    description: 'A modern, high-performance agency landing page built with Next.js 15 and Tailwind CSS.',
+    description:
+      'A modern, high-performance agency landing page built with Next.js 15 and Tailwind CSS.',
     githubUrl: 'https://github.com/studiosatuakun-max/scaffold_1784613264918',
     previewUrl: '/preview/scaffold_1784613264918',
     techStack: ['Next.js 15', 'React', 'Tailwind CSS', 'Framer Motion'],
-    liveDemoUrl: 'http://localhost:3002',
+    liveDemoUrl: '/home',
     imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_10e591c86-1772160867540.png',
   },
   {
@@ -73,9 +75,9 @@ export const TEMPLATES: CatalogTemplate[] = [
     githubUrl: 'https://github.com/studiosatuakun-max/fade_1784619000074',
     previewUrl: '/preview/fade_1784619000074',
     techStack: ['Next.js 15', 'Tailwind CSS', 'Framer Motion'],
-    liveDemoUrl: 'http://localhost:3001',
+    liveDemoUrl: '/mock-fade',
     imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_1bceda0fa-1768299902157.png',
-  }
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
