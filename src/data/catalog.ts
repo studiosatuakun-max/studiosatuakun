@@ -64,7 +64,7 @@ export const TEMPLATES: CatalogTemplate[] = [
     githubUrl: 'https://github.com/studiosatuakun-max/scaffold_1784613264918',
     previewUrl: '/preview/scaffold_1784613264918',
     techStack: ['Next.js 15', 'React', 'Tailwind CSS', 'Framer Motion'],
-    liveDemoUrl: '/home',
+    liveDemoUrl: 'https://scaffold1784613264918.vercel.app/home',
     imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_10e591c86-1772160867540.png',
   },
   {
@@ -75,7 +75,7 @@ export const TEMPLATES: CatalogTemplate[] = [
     githubUrl: 'https://github.com/studiosatuakun-max/fade_1784619000074',
     previewUrl: '/preview/fade_1784619000074',
     techStack: ['Next.js 15', 'Tailwind CSS', 'Framer Motion'],
-    liveDemoUrl: '/mock-fade',
+    liveDemoUrl: 'https://fade1784619000074.vercel.app/home',
     imageUrl: 'https://img.rocket.new/generatedImages/rocket_gen_img_1bceda0fa-1768299902157.png',
   },
 ];
