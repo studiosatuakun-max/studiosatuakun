@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/shared/button";
-import { Send } from "lucide-react";
-import { submitLead } from "@/actions/lead";
+import { useState } from 'react';
+import { Button } from '@/components/shared/button';
+import { Send } from 'lucide-react';
+import { submitLead } from '@/actions/lead';
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,19 +12,19 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get("name") as string,
-      company: formData.get("company") as string,
-      email: formData.get("email") as string,
-      whatsapp: formData.get("whatsapp") as string,
-      budget: formData.get("budget") as string,
-      message: formData.get("message") as string,
+      name: formData.get('name') as string,
+      company: formData.get('company') as string,
+      email: formData.get('email') as string,
+      whatsapp: formData.get('whatsapp') as string,
+      budget: formData.get('budget') as string,
+      message: formData.get('message') as string,
     };
 
     const result = await submitLead(data);
-    
+
     setIsSubmitting(false);
     if (result.success) {
       setIsSuccess(true);
@@ -40,7 +40,8 @@ export default function ContactPage() {
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Mari Mulai Project Anda</h1>
             <p className="text-muted-foreground text-lg mb-8">
-              Isi form di samping dan tim kami akan menghubungi Anda dalam waktu 1x24 jam untuk mendiskusikan kebutuhan Anda.
+              Isi form di samping dan tim kami akan menghubungi Anda dalam waktu 1x24 jam untuk
+              mendiskusikan kebutuhan Anda.
             </p>
 
             <div className="space-y-6">
@@ -77,29 +78,70 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">Nama Lengkap</label>
-                    <input required type="text" id="name" name="name" className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="John Doe" />
+                    <label htmlFor="name" className="text-sm font-medium">
+                      Nama Lengkap
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      placeholder="John Doe"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="company" className="text-sm font-medium">Perusahaan / Organisasi</label>
-                    <input type="text" id="company" name="company" className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="PT Contoh" />
+                    <label htmlFor="company" className="text-sm font-medium">
+                      Perusahaan / Organisasi
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      placeholder="PT Contoh"
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">Email</label>
-                    <input required type="email" id="email" name="email" className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="john@example.com" />
+                    <label htmlFor="email" className="text-sm font-medium">
+                      Email
+                    </label>
+                    <input
+                      required
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      placeholder="john@example.com"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="whatsapp" className="text-sm font-medium">WhatsApp</label>
-                    <input required type="tel" id="whatsapp" name="whatsapp" className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="0812..." />
+                    <label htmlFor="whatsapp" className="text-sm font-medium">
+                      WhatsApp
+                    </label>
+                    <input
+                      required
+                      type="tel"
+                      id="whatsapp"
+                      name="whatsapp"
+                      className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      placeholder="0812..."
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="budget" className="text-sm font-medium">Estimasi Budget</label>
-                  <select id="budget" name="budget" className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50 text-muted-foreground">
+                  <label htmlFor="budget" className="text-sm font-medium">
+                    Estimasi Budget
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    className="w-full h-11 bg-background border border-border rounded-md px-4 focus:outline-none focus:ring-2 focus:ring-primary/50 text-muted-foreground"
+                  >
                     <option value="">Pilih Range Budget</option>
                     <option value="10-50">Rp 10jt - 50jt</option>
                     <option value="50-100">Rp 50jt - 100jt</option>
@@ -108,12 +150,21 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">Deskripsi Project</label>
-                  <textarea required id="message" name="message" rows={4} className="w-full bg-background border border-border rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none" placeholder="Ceritakan detail tentang project Anda..."></textarea>
+                  <label htmlFor="message" className="text-sm font-medium">
+                    Deskripsi Project
+                  </label>
+                  <textarea
+                    required
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="w-full bg-background border border-border rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                    placeholder="Ceritakan detail tentang project Anda..."
+                  ></textarea>
                 </div>
 
                 <Button type="submit" className="w-full h-12 text-lg" disabled={isSubmitting}>
-                  {isSubmitting ? "Mengirim..." : "Kirim Pesan"}
+                  {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
                 </Button>
               </form>
             )}

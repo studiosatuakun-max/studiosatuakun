@@ -1,18 +1,26 @@
-"use client";
+'use client';
 
-import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
-function CountUp({ end, suffix = "", duration = 2 }: { end: number; suffix?: string; duration?: number }) {
+function CountUp({
+  end,
+  suffix = '',
+  duration = 2,
+}: {
+  end: number;
+  suffix?: string;
+  duration?: number;
+}) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   useEffect(() => {
     if (isInView) {
       let start = 0;
       const increment = end / (duration * 60); // Assuming 60fps
-      
+
       const timer = setInterval(() => {
         start += increment;
         if (start >= end) {
@@ -29,7 +37,8 @@ function CountUp({ end, suffix = "", duration = 2 }: { end: number; suffix?: str
 
   return (
     <span ref={ref}>
-      {count}{suffix}
+      {count}
+      {suffix}
     </span>
   );
 }
@@ -39,7 +48,7 @@ export function Metrics() {
     <section className="py-20 border-y border-white/5 bg-background/50 relative z-10 backdrop-blur-sm">
       <div className="container mx-auto px-4 sm:px-8 max-w-5xl">
         <div className="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-16 text-center divide-x divide-white/10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -54,7 +63,7 @@ export function Metrics() {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

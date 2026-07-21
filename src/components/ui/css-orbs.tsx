@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export function CSSOrbs() {
   return (
@@ -16,11 +16,11 @@ export function CSSOrbs() {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "linear",
+          ease: 'linear',
         }}
-        style={{ top: "-10%", left: "10%" }}
+        style={{ top: '-10%', left: '10%' }}
       />
-      
+
       {/* Orb 2: Slate/Dark Contrast */}
       <motion.div
         className="absolute w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full bg-slate-600/20 blur-[100px] md:blur-[140px]"
@@ -32,9 +32,9 @@ export function CSSOrbs() {
         transition={{
           duration: 25,
           repeat: Infinity,
-          ease: "linear",
+          ease: 'linear',
         }}
-        style={{ top: "30%", right: "-10%" }}
+        style={{ top: '30%', right: '-10%' }}
       />
 
       {/* Orb 3: Secondary Gold Accent */}
@@ -48,9 +48,9 @@ export function CSSOrbs() {
         transition={{
           duration: 18,
           repeat: Infinity,
-          ease: "linear",
+          ease: 'linear',
         }}
-        style={{ bottom: "-10%", left: "30%" }}
+        style={{ bottom: '-10%', left: '30%' }}
       />
     </div>
   );

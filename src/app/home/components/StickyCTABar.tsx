@@ -57,10 +57,7 @@ export default function StickyCTABar() {
 
         {/* Form */}
         {!submitted ? (
-          <form
-            onSubmit={handleSubmit}
-            className="flex items-stretch gap-0 w-full md:w-auto"
-          >
+          <form onSubmit={handleSubmit} className="flex items-stretch gap-0 w-full md:w-auto">
             <input
               type="email"
               value={email}
@@ -80,15 +77,16 @@ export default function StickyCTABar() {
         ) : (
           <div className="flex items-center gap-3">
             <Icon name="CheckCircleIcon" size={16} className="text-accent" variant="solid" />
-            <p className="font-mono text-xs text-paper/80">
-              Check your inbox — library link sent.
-            </p>
+            <p className="font-mono text-xs text-paper/80">Check your inbox — library link sent.</p>
           </div>
         )}
 
         {/* Dismiss */}
         <button
-          onClick={() => { setDismissed(true); setVisible(false); }}
+          onClick={() => {
+            setDismissed(true);
+            setVisible(false);
+          }}
           className="absolute top-3 right-4 text-paper/30 hover:text-paper/70 transition-colors duration-200"
           aria-label="Dismiss"
         >

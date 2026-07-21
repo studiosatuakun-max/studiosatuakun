@@ -21,22 +21,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Landing / Ads Pages
-  const landingPages = [
-    '/umkm',
-    '/ai-automation',
-    '/software-custom',
-    '/software',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }));
+  const landingPages = ['/umkm', '/ai-automation', '/software-custom', '/software'].map(
+    (route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    })
+  );
 
   // Dynamic Blog Posts
   const blogSlugs = getBlogSlugs();
   const blogPages = blogSlugs.map((slugFile) => {
-    const slug = slugFile.replace(/\.md$/, "");
+    const slug = slugFile.replace(/\.md$/, '');
     return {
       url: `${baseUrl}/blog/${slug}`,
       lastModified: new Date(),

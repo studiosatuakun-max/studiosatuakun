@@ -18,8 +18,9 @@ export default function Header() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 md:px-10 py-4 flex items-center justify-between ${scrolled ? 'nav-glass' : 'bg-transparent'
-          }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 md:px-10 py-4 flex items-center justify-between ${
+          scrolled ? 'nav-glass' : 'bg-transparent'
+        }`}
       >
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
@@ -55,15 +56,22 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+          <span
+            className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`}
+          />
+          <span
+            className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+          />
+          <span
+            className={`block w-5 h-[1.5px] bg-ink transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`}
+          />
         </button>
       </nav>
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 bg-paper flex flex-col justify-center items-center transition-all duration-500 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
+        className={`fixed inset-0 z-40 bg-paper flex flex-col justify-center items-center transition-all duration-500 ${
+          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
       >
         <div className="flex flex-col gap-8 text-center">
           {['Work', 'Services', 'Katalog', 'About']?.map((item, i) => (

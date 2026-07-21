@@ -9,11 +9,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Studio Satu Akun — Lead Generation & Web Catalog',
-  description: 'Studio Satu Akun builds high-performance web applications, landing pages, and AI automations. Explore our live catalog to find the perfect solution for your business.',
+  description:
+    'Studio Satu Akun builds high-performance web applications, landing pages, and AI automations. Explore our live catalog to find the perfect solution for your business.',
   icons: {
-    icon: [
-      { url: '/assets/images/app_logo.png', type: 'image/x-icon' }
-    ],
+    icon: [{ url: '/assets/images/app_logo.png', type: 'image/x-icon' }],
   },
 };
 
@@ -24,10 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}
+      <body>
+        {children}
 
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fscaffold12825back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.19" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></body>
+        <script
+          type="module"
+          async
+          src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fscaffold12825back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.19"
+        />
+        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" />
+      </body>
     </html>
   );
 }

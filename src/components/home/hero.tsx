@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { Button } from "../shared/button";
-import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { motion } from 'framer-motion';
+import { Button } from '../shared/button';
+import Link from 'next/link';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 export function Hero() {
   const containerVariants = {
@@ -38,42 +38,58 @@ export function Hero() {
           <motion.div variants={itemVariants} className="mb-8">
             <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm text-primary backdrop-blur-md">
               <Sparkles className="w-4 h-4 mr-2" />
-              <span className="font-semibold tracking-wide uppercase text-xs">Premium Software House</span>
+              <span className="font-semibold tracking-wide uppercase text-xs">
+                Premium Software House
+              </span>
             </div>
           </motion.div>
 
           {/* Massive Typography */}
-          <motion.h1 
+          <motion.h1
             variants={itemVariants}
             className="text-6xl sm:text-8xl md:text-[10rem] font-extrabold tracking-tighter mb-4 text-foreground leading-[0.85]"
           >
-            STUDIO<br />SATU AKUN
+            STUDIO
+            <br />
+            SATU AKUN
           </motion.h1>
 
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-foreground/80 mb-8 max-w-3xl mt-4"
           >
-            We engineer <span className="text-primary italic">digital excellence</span> for the modern era.
+            We engineer <span className="text-primary italic">digital excellence</span> for the
+            modern era.
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl leading-relaxed"
           >
-            Membangun website, aplikasi mobile, dan automasi AI dengan desain premium dan performa tanpa kompromi.
+            Membangun website, aplikasi mobile, dan automasi AI dengan desain premium dan performa
+            tanpa kompromi.
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+          >
             <Link href="/contact" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90 rounded-full group active:scale-95 transition-all">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto h-14 px-8 text-base bg-primary text-primary-foreground hover:bg-primary/90 rounded-full group active:scale-95 transition-all"
+              >
                 Mulai Projek Baru
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
             <Link href="/portfolio" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base rounded-full border-white/20 hover:bg-white/5 active:scale-95 transition-all">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto h-14 px-8 text-base rounded-full border-white/20 hover:bg-white/5 active:scale-95 transition-all"
+              >
                 Lihat Portfolio
               </Button>
             </Link>

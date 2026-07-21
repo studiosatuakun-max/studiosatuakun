@@ -16,7 +16,8 @@ export default function HeroSection() {
           alt="Developer desk from above — mechanical keyboard with blue backlit keys, monitor showing block editor, notebook with wireframes, ceramic mug"
           fill
           className="object-cover object-center"
-          priority />
+          priority
+        />
 
         {/* Ink wash overlay — preserves depth, darkens edges */}
         <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/30 to-ink/80" />
@@ -33,9 +34,10 @@ export default function HeroSection() {
             </span>
             <p
               ref={taglineRef}
-              className="animate-fade-up-delay font-mono text-2xl md:text-4xl lg:text-5xl text-paper font-light leading-tight tracking-tight max-w-2xl">
-
-              We build Platforms<br />
+              className="animate-fade-up-delay font-mono text-2xl md:text-4xl lg:text-5xl text-paper font-light leading-tight tracking-tight max-w-2xl"
+            >
+              We build Platforms
+              <br />
               <em className="not-italic text-paper/70">like software,</em>
               <br />
               not just websites.
@@ -45,22 +47,23 @@ export default function HeroSection() {
           {/* Right: descriptor + scroll cue */}
           <div
             ref={subRef}
-            className="animate-fade-up-delay-2 flex flex-col items-start md:items-end gap-6">
-
+            className="animate-fade-up-delay-2 flex flex-col items-start md:items-end gap-6"
+          >
             <p className="font-sans text-sm text-paper/60 max-w-xs md:text-right leading-relaxed font-light">
-              Custom web applications. High-converting landing pages. Data-driven dashboards built with Next.js and Supabase.
+              Custom web applications. High-converting landing pages. Data-driven dashboards built
+              with Next.js and Supabase.
             </p>
             <div className="flex items-center gap-3">
               <a
                 href="#katalog"
-                className="font-mono text-xs uppercase tracking-widest px-5 py-3 bg-accent text-paper hover:bg-accent-hover transition-colors duration-200">
-
+                className="font-mono text-xs uppercase tracking-widest px-5 py-3 bg-accent text-paper hover:bg-accent-hover transition-colors duration-200"
+              >
                 Lihat Katalog
               </a>
               <a
                 href="#work"
-                className="font-mono text-xs uppercase tracking-widest px-5 py-3 border border-paper/30 text-paper hover:border-paper/70 transition-colors duration-200">
-
+                className="font-mono text-xs uppercase tracking-widest px-5 py-3 border border-paper/30 text-paper hover:border-paper/70 transition-colors duration-200"
+              >
                 See Our Work
               </a>
             </div>
@@ -69,10 +72,12 @@ export default function HeroSection() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-up-delay-2">
-          <span className="font-mono text-[10px] uppercase tracking-widest2 text-paper/40">Scroll</span>
+          <span className="font-mono text-[10px] uppercase tracking-widest2 text-paper/40">
+            Scroll
+          </span>
           <div className="w-px h-10 bg-gradient-to-b from-paper/40 to-transparent animate-bounce-y" />
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

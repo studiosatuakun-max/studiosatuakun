@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "../shared/button";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '../shared/button';
 
 export function CTA() {
   return (
@@ -24,7 +24,9 @@ export function CTA() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </div>
-            <span className="text-xs font-medium text-slate-300 tracking-wider uppercase">Tersedia Untuk Projek Baru</span>
+            <span className="text-xs font-medium text-slate-300 tracking-wider uppercase">
+              Tersedia Untuk Projek Baru
+            </span>
           </div>
 
           {/* Massive Typography CTA */}
@@ -36,13 +38,16 @@ export function CTA() {
             Wujudkan visi digital Anda menjadi kenyataan dengan tim engineering terbaik.
           </p>
 
-          <Link 
+          <Link
             href="https://wa.me/6282260880878?text=Halo%20Studio%20Satu%20Akun,%20saya%20ingin%20konsultasi%20mengenai%20project%20saya."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto"
           >
-            <Button size="lg" className="h-16 px-10 text-lg bg-primary text-primary-foreground hover:bg-primary/90 rounded-full group active:scale-95 transition-all w-full sm:w-auto shadow-xl shadow-primary/20">
+            <Button
+              size="lg"
+              className="h-16 px-10 text-lg bg-primary text-primary-foreground hover:bg-primary/90 rounded-full group active:scale-95 transition-all w-full sm:w-auto shadow-xl shadow-primary/20"
+            >
               Gratis Konsultasi
               <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
@@ -53,9 +58,15 @@ export function CTA() {
         <div className="mt-40 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
           <p>© {new Date().getFullYear()} PT Studio Satu Akun. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-primary transition-colors">Instagram</Link>
-            <Link href="#" className="hover:text-primary transition-colors">LinkedIn</Link>
-            <Link href="#" className="hover:text-primary transition-colors">GitHub</Link>
+            <Link href="#" className="hover:text-primary transition-colors">
+              Instagram
+            </Link>
+            <Link href="#" className="hover:text-primary transition-colors">
+              LinkedIn
+            </Link>
+            <Link href="#" className="hover:text-primary transition-colors">
+              GitHub
+            </Link>
           </div>
         </div>
       </div>

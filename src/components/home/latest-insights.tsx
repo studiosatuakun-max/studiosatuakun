@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { getAllBlogPosts } from "@/lib/blog";
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { getAllBlogPosts } from '@/lib/blog';
 
 export function LatestInsights() {
   const posts = getAllBlogPosts().slice(0, 4); // Get latest 4 posts for a solid list
@@ -12,26 +12,35 @@ export function LatestInsights() {
       <div className="container mx-auto px-4 sm:px-8 max-w-5xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">Latest Insights.</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+              Latest Insights.
+            </h2>
             <p className="text-muted-foreground text-lg max-w-md">
               Perspektif teknikal dan studi kasus terbaru dari tim engineering kami.
             </p>
           </div>
-          <Link href="/blog" className="inline-flex items-center text-foreground hover:text-slate-300 font-bold transition-colors uppercase tracking-widest text-xs border-b border-foreground pb-1">
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-foreground hover:text-slate-300 font-bold transition-colors uppercase tracking-widest text-xs border-b border-foreground pb-1"
+          >
             Lihat Semua Artikel
           </Link>
         </div>
 
         <div className="flex flex-col">
           {posts.map((post) => (
-            <Link 
-              href={`/blog/${post.slug}`} 
-              key={post.slug} 
+            <Link
+              href={`/blog/${post.slug}`}
+              key={post.slug}
               className="group flex flex-col md:flex-row md:items-center justify-between py-8 md:py-10 border-t border-slate-800 hover:bg-slate-900/30 transition-colors -mx-4 px-4 sm:mx-0 sm:px-6 rounded-xl"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-16">
                 <span className="text-xs md:text-sm font-mono text-slate-500 min-w-[120px] uppercase tracking-widest">
-                  {new Date(post.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  {new Date(post.date).toLocaleDateString('id-ID', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
                 </span>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-slate-300 transition-colors tracking-tight">
                   {post.title}

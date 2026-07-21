@@ -11,14 +11,18 @@ export default function ResourcesBento() {
       {/* Section header */}
       <div className="px-6 md:px-10 pt-16 pb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest2 text-graphite">Row 01 — Katalog</span>
+          <span className="font-mono text-xs uppercase tracking-widest2 text-graphite">
+            Row 01 — Katalog
+          </span>
           <h2 className="mt-2 font-mono text-3xl md:text-4xl font-light text-ink tracking-tight">
-            Our best work,<br />
+            Our best work,
+            <br />
             <em className="not-italic text-graphite">ready for you.</em>
           </h2>
         </div>
         <p className="font-sans text-sm text-graphite max-w-sm leading-relaxed font-light">
-          Explore our collection of high-performance landing pages, dashboards, and web apps. Ready to deploy or customize.
+          Explore our collection of high-performance landing pages, dashboards, and web apps. Ready
+          to deploy or customize.
         </p>
       </div>
 
@@ -34,19 +38,21 @@ export default function ResourcesBento() {
                 <h3 className="font-mono text-2xl font-light text-ink mb-3 group-hover:text-accent transition-colors duration-300">
                   {cat.title}
                 </h3>
-                <p className="font-sans text-sm text-graphite leading-relaxed">
-                  {cat.description}
-                </p>
+                <p className="font-sans text-sm text-graphite leading-relaxed">{cat.description}</p>
               </div>
-              
+
               <div className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-graphite group-hover:text-ink transition-colors duration-300">
                 <span>View Foundations</span>
-                <Icon name="ArrowRightIcon" size={12} className="transform group-hover:translate-x-1 transition-transform duration-300" />
+                <Icon
+                  name="ArrowRightIcon"
+                  size={12}
+                  className="transform group-hover:translate-x-1 transition-transform duration-300"
+                />
               </div>
             </div>
           </Link>
         ))}
-        
+
         {/* Placeholder / CTA tile for the 6th slot to balance the grid (since we have 5 categories) */}
         <div className="h-full border-b border-[rgba(107,110,115,0.25)] bg-ink p-8 md:p-12 flex flex-col justify-between min-h-[320px]">
           <div>
@@ -54,11 +60,15 @@ export default function ResourcesBento() {
               Need a Custom Solution?
             </h3>
             <p className="font-sans text-sm text-paper/60 leading-relaxed max-w-xs">
-              If you can't find what you're looking for in our catalog, we can build it from scratch.
+              If you can't find what you're looking for in our catalog, we can build it from
+              scratch.
             </p>
           </div>
-          
-          <a href="#services" className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent hover:text-paper transition-colors duration-300">
+
+          <a
+            href="#services"
+            className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent hover:text-paper transition-colors duration-300"
+          >
             <span>Start a Project</span>
             <Icon name="ArrowRightIcon" size={12} />
           </a>

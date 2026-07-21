@@ -1,9 +1,9 @@
-import { notFound } from "next/navigation";
-import { getBlogPostBySlug, getBlogSlugs } from "@/lib/blog";
-import ReactMarkdown from "react-markdown";
-import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, Calendar } from "lucide-react";
+import { notFound } from 'next/navigation';
+import { getBlogPostBySlug, getBlogSlugs } from '@/lib/blog';
+import ReactMarkdown from 'react-markdown';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowLeft, Calendar } from 'lucide-react';
 
 // For Next.js 15, params is a Promise
 type Props = {
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPostBySlug(resolvedParams.slug);
 
   if (!post) {
-    return { title: "Artikel Tidak Ditemukan | Studio Satu Akun" };
+    return { title: 'Artikel Tidak Ditemukan | Studio Satu Akun' };
   }
 
   return {
@@ -24,11 +24,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      type: "article",
+      type: 'article',
       url: `https://studiosatuakun.id/blog/${post.slug}`,
       images: [
         {
-          url: post.coverImage || "/og.png",
+          url: post.coverImage || '/og.png',
         },
       ],
     },
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export async function generateStaticParams() {
   const slugs = getBlogSlugs();
   return slugs.map((slug) => ({
-    slug: slug.replace(/\.md$/, ""),
+    slug: slug.replace(/\.md$/, ''),
   }));
 }
 
@@ -53,24 +53,29 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <div className="container mx-auto px-4 max-w-3xl pt-32 pb-20">
-        <Link href="/blog" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-white transition-colors mb-10 group">
+        <Link
+          href="/blog"
+          className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-white transition-colors mb-10 group"
+        >
           <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
           Kembali ke Blog
         </Link>
-        
+
         <header className="mb-14">
           <div className="flex items-center gap-2 text-sm text-yellow-400 mb-4 font-mono">
             <Calendar className="w-4 h-4" />
             <time dateTime={post.date}>
-              {new Date(post.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {new Date(post.date).toLocaleDateString('id-ID', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
             </time>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 text-balance leading-tight text-white/90">
             {post.title}
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            {post.excerpt}
-          </p>
+          <p className="text-xl text-muted-foreground leading-relaxed">{post.excerpt}</p>
         </header>
 
         {post.coverImage && (

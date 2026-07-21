@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default function Footer() {
   return (
     <footer className="border-t border-[rgba(107,110,115,0.25)] bg-paper px-6 md:px-10 py-16">
@@ -13,8 +12,10 @@ export default function Footer() {
               Studio Satu Akun
             </span>
             <p className="font-mono text-xs text-graphite max-w-xs leading-relaxed">
-              PT Studio Satu Akun<br />
-              Email: dev@studiosatuakun.id<br />
+              PT Studio Satu Akun
+              <br />
+              Email: dev@studiosatuakun.id
+              <br />
               Whatsapp: 082260880878
             </p>
           </div>

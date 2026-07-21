@@ -1,5 +1,5 @@
-import React from "react";
-import { PixelHero } from "@/components/ui/pixel-perfect-hero";
+import React from 'react';
+import { PixelHero } from '@/components/ui/pixel-perfect-hero';
 
 export default function Demo() {
   return (
