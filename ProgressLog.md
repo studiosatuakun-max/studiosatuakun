@@ -25,34 +25,57 @@ Catatan progres pengembangan platform **studiosatuakun.id** sebagai etalase port
 ## ✅ Phase 4: Live Preview Dual-Funnel Wrapper
 
 - **Image Preview di Katalog:** Gambar template tampil di card kategori. Hover → muncul overlay "View Live" yang elegan.
-- **Live Preview Wrapper (`/preview/[slug]`):** Halaman iframe penuh dengan Top Bar premium:
-  - Tombol Back ke katalog
-  - Judul template
-  - Tombol View in fullscreen
-  - CTA utama: **"Use this Foundation"**
-- **Deploy Template ke Vercel:**
-  - `fade_1784619000074` → **https://fade1784619000074.vercel.app** ✅
-  - `scaffold_1784613264918` → **https://scaffold1784613264918.vercel.app** ✅
-  - Token Vercel disimpan di `.env.local` (tidak ter-commit ke GitHub).
-- **Screenshot Otomatis via Microlink API:** Gambar preview di katalog sekarang diambil langsung sebagai screenshot live dari URL Vercel masing-masing template.
 - **Nama Template Deskriptif:** Update nama agar user langsung paham isi template sebelum klik:
-  - `Agency Scaffold Template` → **"Web Agency — Portfolio & Services"**
-  - `Fade Interactive Layout` → **"Barbershop 24/7 — Dark & Premium"**
+  - → **"Web Agency — Portfolio & Services"**
+  - → **"Barbershop 24/7 — Dark & Premium"**
+- **Screenshot Otomatis via Microlink API:** Gambar preview di katalog diambil langsung sebagai screenshot live dari URL Vercel masing-masing template.
+- **Deploy Template ke Vercel (Production):**
+  - `fade_1784619000074` → `https://fade1784619000074.vercel.app` ✅
+  - `scaffold_1784613264918` → `https://scaffold1784613264918.vercel.app` ✅
+  - Token Vercel disimpan di `.env.local` (tidak ter-commit ke GitHub).
+- **Live Preview Wrapper (`/preview/[slug]`):** Halaman iframe penuh dengan Top Bar premium (Back, Judul, View fullscreen, CTA).
+
+---
+
+## ✅ Phase 5: Dual-Funnel Conversion & Checkout (90% Done)
+
+### Preview Page Upgrade
+- **Dual CTA di Top Bar:**
+  - 🟢 **Konsultasi Dulu (WA)** → Warm lead via WhatsApp `6282260880878`
+  - ⚫ **Pesan Sekarang** → Langsung ke `/checkout/[slug]`
+- **JSON-LD Service Schema:** Tiap halaman preview punya schema `@type: Service` (bukan SoftwareApp) untuk SEO jasa.
+- **Dynamic Metadata:** `generateMetadata()` menghasilkan title & description unik per template.
+- **loading.tsx:** Skeleton UI saat iframe dimuat.
+- **error.tsx:** Error boundary dengan tombol retry + back to catalog.
+
+### Checkout Flow (Project Brief)
+- **`/checkout/[slug]/page.tsx`:** Server Component, generate metadata dinamis.
+- **`CheckoutForm.tsx`:** Client Component dengan:
+  - React Hook Form + Zod validation
+  - Fields: Nama, Email, WhatsApp, Perusahaan, Domain, Status Konten, Add-ons, Catatan
+  - Add-ons: Multi-Bahasa, Custom Admin Dashboard, Integrasi Pihak Ketiga
+- **`actions.ts`:** Server Action → kirim data ke Supabase `orders` table.
+- **`/checkout/success`:** Halaman konfirmasi dengan link WA untuk follow-up cepat.
+
+### Database (Supabase)
+- **Project:** `verqhtsmuebvggtkmyrz.supabase.co`
+- **Tabel `orders`:** Berhasil dibuat dengan kolom lengkap (id, template_id, client info, addons JSON, status).
+- **Status:** ⏳ RLS policy masih perlu di-fix agar insert dari anon berjalan mulus.
+  - Fix: Jalankan `ALTER TABLE orders DISABLE ROW LEVEL SECURITY;` di SQL Editor Supabase.
 
 ---
 
 ## 🛠️ Fix & Maintenance
 
-- Instal dependencies yang sempat hilang: `lucide-react`, `framer-motion`, `react-markdown`, `@radix-ui/react-slot`, `class-variance-authority`, `tailwind-merge`, `gray-matter`.
-- Tambah `eslint: { ignoreDuringBuilds: true }` dan hapus key `turbopack` dari `next.config.mjs` agar Vercel build tidak gagal.
-- Token Vercel dijauhkan dari history Git (diganti env var `$VERCEL_TOKEN`).
+- Instal dependencies: `lucide-react`, `framer-motion`, `react-markdown`, `@radix-ui/react-slot`, `class-variance-authority`, `tailwind-merge`, `gray-matter`, `@supabase/supabase-js`, `zod`, `react-hook-form`, `@hookform/resolvers`.
+- Tambah `eslint: { ignoreDuringBuilds: true }` dan hapus key `turbopack` dari `next.config.mjs`.
+- Token Vercel & Supabase key disimpan di `.env.local` (tidak masuk Git).
 
 ---
 
-## 📋 Next Steps: Phase 5 (Checkout)
+## 📋 Sisa Pekerjaan
 
-Fondasi sudah komplit. Langkah terakhir yang tersisa:
-
-- **Halaman Checkout (`/checkout/[slug]`):** Split layout dengan Order Summary (kiri) + Form pemesanan (kanan).
-- **Form Validation:** Zod + React Hook Form (Nama, Email, WhatsApp, Perusahaan, Catatan).
-- **Halaman Sukses (`/checkout/success`):** Animasi sukses + instruksi follow-up ke klien.
+- [ ] Fix Supabase RLS (`ALTER TABLE orders DISABLE ROW LEVEL SECURITY;`)
+- [ ] Test end-to-end: Isi form checkout → cek data masuk di Supabase dashboard
+- [ ] Tambahkan env vars Supabase ke Vercel project settings agar production juga bisa insert
+- [ ] (Opsional) Notifikasi email/WA otomatis saat order baru masuk
