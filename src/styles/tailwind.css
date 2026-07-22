@@ -39,26 +39,28 @@ body {
 }
 
 /* ── Bento Grid ── */
-.bento-grid {
-  display: grid;
-  gap: 1px;
-  background-color: var(--border);
-}
+@layer components {
+  .bento-grid {
+    display: grid;
+    gap: 1px;
+    background-color: var(--border);
+  }
 
-.bento-tile {
-  background-color: var(--paper);
-  overflow: hidden;
-  position: relative;
-}
+  .bento-tile {
+    background-color: var(--paper);
+    overflow: hidden;
+    position: relative;
+  }
 
-.bento-tile-dark {
-  background-color: var(--tile-dark);
-  color: var(--paper);
-}
+  .bento-tile-dark {
+    background-color: var(--tile-dark);
+    color: var(--paper);
+  }
 
-.bento-tile-darker {
-  background-color: var(--tile-dark-secondary);
-  color: var(--paper);
+  .bento-tile-darker {
+    background-color: var(--tile-dark-secondary);
+    color: var(--paper);
+  }
 }
 
 /* ── Stagger Reveal ── */
