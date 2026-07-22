@@ -17,7 +17,7 @@ export function Navbar() {
         </div>
 
         {/* Menu (Centered) */}
-        <nav className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
+        <nav className="hidden md:flex gap-6 font-mono text-xs uppercase tracking-widest text-muted-foreground">
           <Link href="/about" className="hover:text-foreground transition-colors">
             About
           </Link>
@@ -35,10 +35,9 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* CTA (Absolute Right) */}
         <div className="absolute right-4 sm:right-8 flex items-center gap-4">
           <Link href="/contact">
-            <Button className="font-medium tracking-wide bg-transparent hover:bg-transparent">
+            <Button className="font-mono text-xs uppercase tracking-widest bg-transparent hover:bg-transparent text-foreground">
               Konsultasi Gratis
             </Button>
           </Link>

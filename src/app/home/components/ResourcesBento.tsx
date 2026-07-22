@@ -27,10 +27,10 @@ export default function ResourcesBento() {
       </div>
 
       {/* Catalog Categories Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-[rgba(107,110,115,0.25)]">
+      <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 border-t border-[rgba(107,110,115,0.25)] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {CATEGORIES.map((cat) => (
-          <Link href={`/katalog/${cat.id}`} key={cat.id} className="group">
-            <div className="h-full border-b md:border-r border-[rgba(107,110,115,0.25)] p-8 md:p-12 transition-colors duration-500 hover:bg-[rgba(107,110,115,0.02)] flex flex-col justify-between min-h-[320px]">
+          <Link href={`/katalog/${cat.id}`} key={cat.id} className="group w-[85vw] md:w-auto shrink-0 snap-start">
+            <div className="h-full border-r md:border-b-0 border-[rgba(107,110,115,0.25)] p-8 md:p-12 transition-colors duration-500 hover:bg-[rgba(107,110,115,0.02)] flex flex-col justify-between min-h-[320px]">
               <div>
                 <div className="w-12 h-12 flex items-center justify-center border border-[rgba(107,110,115,0.25)] rounded-full text-graphite group-hover:bg-ink group-hover:text-paper group-hover:border-ink transition-all duration-500 mb-8">
                   <Icon name={cat.iconName} size={20} />
@@ -54,7 +54,7 @@ export default function ResourcesBento() {
         ))}
 
         {/* Placeholder / CTA tile for the 6th slot to balance the grid (since we have 5 categories) */}
-        <div className="h-full border-b border-[rgba(107,110,115,0.25)] bg-ink p-8 md:p-12 flex flex-col justify-between min-h-[320px]">
+        <div className="h-full border-r md:border-b-0 border-[rgba(107,110,115,0.25)] bg-ink p-8 md:p-12 flex flex-col justify-between min-h-[320px] w-[85vw] md:w-auto shrink-0 snap-start">
           <div>
             <h3 className="font-mono text-2xl font-light text-paper mb-3">
               Need a Custom Solution?
