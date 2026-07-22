@@ -1,0 +1,69 @@
+import React from 'react';
+import Link from 'next/link';
+import { getAllBlogPosts } from '@/lib/blog';
+import { Calendar, ArrowRight } from 'lucide-react';
+
+export default function BlogSection() {
+  const posts = getAllBlogPosts().slice(0, 3); // Ambil 3 terbaru
+
+  if (posts.length === 0) return null;
+
+  return (
+    <section id="blog" className="py-24 px-6 md:px-10 border-t border-[rgba(107,110,115,0.15)] bg-paper">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest2 text-graphite">
+              Insights & Journal
+            </span>
+            <h2 className="mt-2 font-mono text-3xl md:text-4xl font-light text-ink tracking-tight">
+              Latest from the journal.
+            </h2>
+          </div>
+          <Link
+            href="/blog"
+            className="font-mono text-xs uppercase tracking-widest px-5 py-3 border border-[rgba(107,110,115,0.3)] text-ink hover:border-ink transition-colors duration-200"
+          >
+            Lihat Semua Journal
+          </Link>
+        </div>
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-8 pb-4 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {posts.map((post) => (
+            <Link
+              href={`/blog/${post.slug}`}
+              key={post.slug}
+              className="group flex flex-col border border-[rgba(12,12,12,0.15)] bg-white hover:border-ink/40 transition-all duration-300 w-[85vw] md:w-auto shrink-0 snap-start min-h-[280px]"
+            >
+              <div className="p-8 md:p-10 flex flex-col flex-1">
+                <div className="flex items-center gap-2 text-xs text-graphite mb-4 font-mono uppercase tracking-wide">
+                  <Calendar className="w-3 h-3" />
+                  <span>
+                    {new Date(post.date).toLocaleDateString('id-ID', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </span>
+                </div>
+
+                <h3 className="font-mono text-lg font-medium tracking-tight text-ink mb-3 group-hover:text-graphite transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+
+                <p className="text-graphite text-sm line-clamp-3 mb-6 font-light leading-relaxed flex-1">
+                  {post.excerpt}
+                </p>
+
+                <div className="flex items-center text-xs font-mono font-semibold text-ink group-hover:text-graphite uppercase tracking-widest mt-auto transition-colors">
+                  Baca Journal
+                  <ArrowRight className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
