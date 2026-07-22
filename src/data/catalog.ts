@@ -91,6 +91,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://sober1784698889697.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fsober1784698889697.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'appraise_1784699261083',
+    category: 'landing-page',
+    title: 'Real Estate Appraisal — Property Valuation',
+    description:
+      'Template website untuk jasa penilai properti (appraisal) atau layanan real estate. Cocok untuk menampilkan studi kasus valuasi rumah, portofolio proyek, dan proses kerja profesional.',
+    githubUrl: 'https://github.com/studiosatuakun-max/appraise_1784699261083',
+    previewUrl: '/preview/appraise_1784699261083',
+    techStack: ['Next.js 15', 'Tailwind CSS'],
+    liveDemoUrl: 'https://appraise1784699261083.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fappraise1784699261083.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
