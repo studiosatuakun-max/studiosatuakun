@@ -8,6 +8,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://studiosatuakun.id'),
   title: 'Studio Satu Akun — Lead Generation & Web Catalog',
   description:
     'Studio Satu Akun builds high-performance web applications, landing pages, and AI automations. Explore our live catalog to find the perfect solution for your business.',
@@ -16,6 +17,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: ['/og.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og.jpg'],
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 

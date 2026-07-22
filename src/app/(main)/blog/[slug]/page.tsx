@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      url: `https://studiosatuakun.id/blog/${post.slug}`,
+      url: `/blog/${post.slug}`,
       images: [
         {
-          url: post.coverImage || '/og.png',
+          url: post.coverImage || '/og.jpg',
         },
       ],
     },
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: [post.coverImage || '/og.png'],
+      images: [post.coverImage || '/og.jpg'],
     },
   };
 }
@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
           className="inline-flex items-center text-xs font-mono uppercase tracking-widest text-graphite hover:text-ink transition-colors mb-12 group"
         >
           <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-          Kembali ke Blog
+          Kembali ke Journal
         </Link>
 
         <header className="mb-14">

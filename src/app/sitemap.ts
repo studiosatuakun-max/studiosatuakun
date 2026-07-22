@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getBlogSlugs } from '@/lib/blog';
+import { TEMPLATES } from '@/data/catalog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://studiosatuakun.id';
@@ -7,11 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Core Pages
   const staticRoutes = [
     '',
-    '/about',
-    '/process',
-    '/portfolio',
-    '/services',
-    '/contact',
     '/blog',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
@@ -42,5 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticRoutes, ...landingPages, ...blogPages];
+  // Dynamic Catalog Previews
+  const previewPages = TEMPLATES.map((template) => ({
+    url: `${baseUrl}${template.previewUrl}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...landingPages, ...blogPages, ...previewPages];
 }
