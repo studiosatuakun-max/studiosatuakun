@@ -14,17 +14,17 @@ export default function BlogSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest2 text-graphite">
-              Insights & Articles
+              Insights & Journal
             </span>
             <h2 className="mt-2 font-mono text-3xl md:text-4xl font-light text-ink tracking-tight">
-              Latest from the blog.
+              Latest from the journal.
             </h2>
           </div>
           <Link
             href="/blog"
             className="font-mono text-xs uppercase tracking-widest px-5 py-3 border border-[rgba(107,110,115,0.3)] text-ink hover:border-ink transition-colors duration-200"
           >
-            Lihat Semua Artikel
+            Lihat Semua Journal
           </Link>
         </div>
 
@@ -33,25 +33,9 @@ export default function BlogSection() {
             <Link
               href={`/blog/${post.slug}`}
               key={post.slug}
-              className="group flex flex-col border border-[rgba(107,110,115,0.15)] bg-white hover:border-ink/50 transition-all duration-300 w-[85vw] md:w-auto shrink-0 snap-start"
+              className="group flex flex-col border border-[rgba(12,12,12,0.15)] bg-white hover:border-ink/40 transition-all duration-300 w-[85vw] md:w-auto shrink-0 snap-start min-h-[280px]"
             >
-              {post.coverImage ? (
-                <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100">
-                  <img
-                    src={post.coverImage}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ) : (
-                <div className="aspect-[16/9] w-full bg-ink/5 flex items-center justify-center border-b border-[rgba(107,110,115,0.15)]">
-                  <span className="font-mono font-bold text-ink/20 text-xl tracking-widest uppercase">
-                    INSIGHT
-                  </span>
-                </div>
-              )}
-
-              <div className="p-6 flex flex-col flex-1">
+              <div className="p-8 md:p-10 flex flex-col flex-1">
                 <div className="flex items-center gap-2 text-xs text-graphite mb-4 font-mono uppercase tracking-wide">
                   <Calendar className="w-3 h-3" />
                   <span>
@@ -72,7 +56,7 @@ export default function BlogSection() {
                 </p>
 
                 <div className="flex items-center text-xs font-mono font-semibold text-ink group-hover:text-graphite uppercase tracking-widest mt-auto transition-colors">
-                  Baca Artikel
+                  Baca Journal
                   <ArrowRight className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
