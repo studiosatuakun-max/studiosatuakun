@@ -10,6 +10,8 @@ import ServicesAccordion from './components/ServicesAccordion';
 import BlogSection from './components/BlogSection';
 import CtaBanner from './components/CtaBanner';
 
+import ClientLogos from './components/ClientLogos';
+
 export default function HomePage() {
   return (
     <main className="relative bg-paper text-ink">
@@ -18,6 +20,7 @@ export default function HomePage() {
       <MarqueeSection />
       <ResourcesBento />
       <CtaBanner />
+      <ClientLogos />
       <CaseStudiesBento />
       <ServicesAccordion />
       <TeamBento />
