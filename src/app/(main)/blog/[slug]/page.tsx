@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${post.title} | Studio Satu Akun Blog`,
+    title: `${post.title} | Studio Satu Akun`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -31,6 +31,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: post.coverImage || '/og.png',
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage || '/og.png'],
     },
   };
 }
@@ -51,18 +57,18 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-paper">
       <div className="container mx-auto px-4 max-w-3xl pt-32 pb-20">
         <Link
           href="/blog"
-          className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-white transition-colors mb-10 group"
+          className="inline-flex items-center text-xs font-mono uppercase tracking-widest text-graphite hover:text-ink transition-colors mb-12 group"
         >
           <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
           Kembali ke Blog
         </Link>
 
         <header className="mb-14">
-          <div className="flex items-center gap-2 text-sm text-yellow-400 mb-4 font-mono">
+          <div className="flex items-center gap-2 text-xs text-accent mb-6 font-mono uppercase tracking-wide">
             <Calendar className="w-4 h-4" />
             <time dateTime={post.date}>
               {new Date(post.date).toLocaleDateString('id-ID', {
@@ -72,20 +78,20 @@ export default async function BlogPostPage({ params }: Props) {
               })}
             </time>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 text-balance leading-tight text-white/90">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 text-balance leading-tight text-ink">
             {post.title}
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">{post.excerpt}</p>
+          <p className="text-lg md:text-xl text-graphite font-light leading-relaxed">{post.excerpt}</p>
         </header>
 
         {post.coverImage && (
-          <div className="aspect-[21/9] w-full rounded-2xl overflow-hidden mb-14 bg-white/5 border border-white/10 shadow-2xl">
+          <div className="aspect-[21/9] w-full overflow-hidden mb-16 bg-gray-100 border border-[rgba(107,110,115,0.15)]">
             <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
           </div>
         )}
 
         {/* Prose class requires @tailwindcss/typography */}
-        <article className="prose prose-invert prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-yellow-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:border prose-img:border-white/10 prose-hr:border-white/10">
+        <article className="prose prose-lg md:prose-xl max-w-none text-ink prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-ink prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-img:border prose-img:border-[rgba(107,110,115,0.15)] prose-hr:border-[rgba(107,110,115,0.15)] prose-strong:text-ink prose-blockquote:border-accent prose-blockquote:bg-accent/5 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:text-ink/80 prose-blockquote:font-normal prose-blockquote:not-italic font-light leading-relaxed">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </article>
       </div>

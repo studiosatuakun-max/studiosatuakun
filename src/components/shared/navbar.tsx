@@ -1,23 +1,18 @@
 import Link from 'next/link';
 import { Button } from './button';
 
-import Image from 'next/image';
-
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-center px-4 sm:px-8 relative">
         {/* Logo (Absolute Left) */}
         <div className="absolute left-4 sm:left-8 flex items-center">
-          <Link href="/">
-            <Image
-              src="/bw.svg"
-              alt="Studio Satu Akun"
-              width={140}
-              height={40}
-              className="h-8 w-auto object-contain hover:opacity-80 transition-opacity"
-              priority
-            />
+          <Link href="/" className="flex items-center gap-2 group">
+            <span className="font-mono text-sm font-semibold tracking-widest2 text-foreground uppercase group-hover:opacity-80 transition-opacity">
+              Studio Satu Akun
+            </span>
+            <span className="font-mono text-sm text-muted-foreground hidden sm:inline">/</span>
+            <span className="font-mono text-xs text-muted-foreground tracking-wide hidden sm:inline">ID</span>
           </Link>
         </div>
 
