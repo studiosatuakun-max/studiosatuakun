@@ -115,6 +115,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://forecast1784699756735.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fforecast1784699756735.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'bookings_1784700170158',
+    category: 'web-app',
+    title: 'Salon Booking & Social Media Manager',
+    description:
+      'Template web app khusus untuk salon, klinik kecantikan, atau barbershop. Menggabungkan fitur booking online, manajemen jadwal, dan analisa konversi social media dalam satu platform.',
+    githubUrl: 'https://github.com/studiosatuakun-max/bookings_1784700170158',
+    previewUrl: '/preview/bookings_1784700170158',
+    techStack: ['Next.js 15', 'Tailwind CSS', 'Framer Motion'],
+    liveDemoUrl: 'https://bookings1784700170158.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fbookings1784700170158.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
