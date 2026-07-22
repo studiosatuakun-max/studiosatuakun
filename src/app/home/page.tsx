@@ -8,6 +8,7 @@ import CaseStudiesBento from './components/CaseStudiesBento';
 import TeamBento from './components/TeamBento';
 import ServicesAccordion from './components/ServicesAccordion';
 import BlogSection from './components/BlogSection';
+import CtaBanner from './components/CtaBanner';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <HeroSection />
       <MarqueeSection />
       <ResourcesBento />
+      <CtaBanner />
       <CaseStudiesBento />
       <ServicesAccordion />
       <TeamBento />
