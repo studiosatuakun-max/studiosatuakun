@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[rgba(107,110,115,0.25)] bg-paper px-6 md:px-10 py-16">
+    <footer className="border-t border-[rgba(12,12,12,0.15)] bg-paper px-6 md:px-10 py-16">
       <div className="max-w-7xl mx-auto">
         {/* Arc pattern: logo+tagline left, links right */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
@@ -30,6 +30,7 @@ export default function Footer() {
               { label: 'Services', href: '#services' },
               { label: 'Katalog', href: '#katalog' },
               { label: 'About', href: '#about' },
+              { label: 'Journal', href: '/blog' },
               { label: 'Privacy', href: '#' },
               { label: 'Terms', href: '#' },
             ]?.map((link) => (
@@ -45,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="mt-12 pt-6 border-t border-[rgba(107,110,115,0.15)] flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-6 border-t border-[rgba(12,12,12,0.15)] flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="font-mono text-xs text-graphite">
             © 2026 Studio Satu Akun. All rights reserved.
           </span>
@@ -58,7 +59,7 @@ export default function Footer() {
               <a
                 key={s?.label}
                 href={s?.href}
-                className="font-mono text-xs uppercase tracking-widest text-graphite hover:text-accent transition-colors duration-200"
+                className="font-mono text-xs uppercase tracking-widest text-graphite hover:text-ink transition-colors duration-200"
               >
                 {s?.label}
               </a>

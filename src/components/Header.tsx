@@ -33,10 +33,10 @@ export default function Header() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          {['Work', 'Services', 'Katalog', 'About']?.map((item) => (
+          {['Work', 'Services', 'Katalog', 'About', 'Journal']?.map((item) => (
             <a
               key={item}
-              href={pathname === '/home' || pathname === '/' ? `#${item?.toLowerCase()}` : `/home#${item?.toLowerCase()}`}
+              href={item === 'Journal' ? '/blog' : (pathname === '/home' || pathname === '/' ? `#${item?.toLowerCase()}` : `/home#${item?.toLowerCase()}`)}
               className="font-mono text-xs uppercase tracking-widest text-graphite hover:text-ink transition-colors duration-200"
             >
               {item}
@@ -75,10 +75,10 @@ export default function Header() {
         }`}
       >
         <div className="flex flex-col gap-8 text-center">
-          {['Work', 'Services', 'Katalog', 'About']?.map((item, i) => (
+          {['Work', 'Services', 'Katalog', 'About', 'Journal']?.map((item, i) => (
             <a
               key={item}
-              href={pathname === '/home' || pathname === '/' ? `#${item?.toLowerCase()}` : `/home#${item?.toLowerCase()}`}
+              href={item === 'Journal' ? '/blog' : (pathname === '/home' || pathname === '/' ? `#${item?.toLowerCase()}` : `/home#${item?.toLowerCase()}`)}
               onClick={() => setMenuOpen(false)}
               className="font-mono text-4xl uppercase tracking-tighter text-ink hover:text-accent transition-colors duration-200"
               style={{ transitionDelay: `${i * 60}ms` }}
