@@ -103,6 +103,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://appraise1784699261083.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fappraise1784699261083.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'forecast_1784699756735',
+    category: 'dashboard',
+    title: 'Operations Center & Data Monitoring',
+    description:
+      'Template dashboard profesional untuk pemantauan data real-time, manajemen operasi, atau platform B2B SaaS. Dilengkapi matriks data dan visualisasi metrik.',
+    githubUrl: 'https://github.com/studiosatuakun-max/forecast_1784699756735',
+    previewUrl: '/preview/forecast_1784699756735',
+    techStack: ['Next.js 15', 'Tailwind CSS'],
+    liveDemoUrl: 'https://forecast1784699756735.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fforecast1784699756735.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
