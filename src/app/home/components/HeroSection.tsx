@@ -15,7 +15,7 @@ export default function HeroSection() {
           src="/hero-bg.jpg"
           alt="Developer desk from above — mechanical keyboard with blue backlit keys, monitor showing block editor, notebook with wireframes, ceramic mug"
           fill
-          className="object-cover object-center"
+          className="w-full h-full object-cover object-center"
           priority
         />
 

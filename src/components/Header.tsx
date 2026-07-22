@@ -43,7 +43,8 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#katalog"
+            href="https://wa.me/6282260880878"
+            target="_blank" rel="noopener noreferrer"
             className="font-mono text-xs uppercase tracking-widest px-4 py-2 bg-ink text-paper hover:bg-accent transition-colors duration-200"
           >
             Mulai Konsultasi
@@ -86,7 +87,8 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#katalog"
+            href="https://wa.me/6282260880878"
+            target="_blank" rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="mt-4 font-mono text-sm uppercase tracking-widest px-8 py-4 bg-ink text-paper hover:bg-accent transition-colors duration-200"
           >
