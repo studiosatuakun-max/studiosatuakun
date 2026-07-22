@@ -63,7 +63,7 @@ export default function BlogSection() {
                   </span>
                 </div>
 
-                <h3 className="font-mono text-lg font-medium tracking-tight text-ink mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                <h3 className="font-mono text-lg font-medium tracking-tight text-ink mb-3 group-hover:text-graphite transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
@@ -71,7 +71,7 @@ export default function BlogSection() {
                   {post.excerpt}
                 </p>
 
-                <div className="flex items-center text-xs font-mono font-semibold text-ink group-hover:text-accent uppercase tracking-widest mt-auto transition-colors">
+                <div className="flex items-center text-xs font-mono font-semibold text-ink group-hover:text-graphite uppercase tracking-widest mt-auto transition-colors">
                   Baca Artikel
                   <ArrowRight className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>

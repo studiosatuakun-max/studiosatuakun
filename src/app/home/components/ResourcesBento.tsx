@@ -35,7 +35,7 @@ export default function ResourcesBento() {
                 <div className="w-12 h-12 flex items-center justify-center border border-[rgba(107,110,115,0.25)] rounded-full text-graphite group-hover:bg-ink group-hover:text-paper group-hover:border-ink transition-all duration-500 mb-8">
                   <Icon name={cat.iconName} size={20} />
                 </div>
-                <h3 className="font-mono text-2xl font-light text-ink mb-3 group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-mono text-2xl font-light text-ink mb-3 group-hover:text-graphite transition-colors duration-300">
                   {cat.title}
                 </h3>
                 <p className="font-sans text-sm text-graphite leading-relaxed">{cat.description}</p>
@@ -67,7 +67,7 @@ export default function ResourcesBento() {
 
           <a
             href="#services"
-            className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent hover:text-paper transition-colors duration-300"
+            className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-paper hover:text-graphite transition-colors duration-300"
           >
             <span>Start a Project</span>
             <Icon name="ArrowRightIcon" size={12} />

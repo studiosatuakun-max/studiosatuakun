@@ -160,10 +160,10 @@ function TeamTile({ member }: { member: TeamMember }) {
     <div className="group h-full flex flex-col">
       {/* Icon Monogram */}
       <div
-        className={`relative h-[260px] md:h-[300px] flex items-center justify-center overflow-hidden transition-colors duration-700 ${member.dark ? 'bg-ink group-hover:bg-accent/10' : 'bg-[rgba(107,110,115,0.05)] group-hover:bg-accent/5'}`}
+        className={`relative h-[260px] md:h-[300px] flex items-center justify-center overflow-hidden transition-colors duration-700 ${member.dark ? 'bg-ink group-hover:bg-[#1C1C1E]' : 'bg-[rgba(12,12,12,0.02)] group-hover:bg-[rgba(12,12,12,0.06)]'}`}
       >
         <div
-          className={`opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ${member.dark ? 'text-paper/20 group-hover:text-accent' : 'text-ink/10 group-hover:text-accent'}`}
+          className={`opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ${member.dark ? 'text-paper/20 group-hover:text-paper' : 'text-ink/10 group-hover:text-ink'}`}
         >
           {member.iconName ? (
             <Icon name={member.iconName} size={140} />

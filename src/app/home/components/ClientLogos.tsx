@@ -15,7 +15,7 @@ export default function ClientLogos() {
   const doubled = [...clients, ...clients];
 
   return (
-    <section className="bg-[#111111] py-20 overflow-hidden border-b border-[#222222]">
+    <section className="bg-[#0C0C0C] py-20 overflow-hidden border-b border-[rgba(255,255,255,0.05)]">
       <div className="max-w-7xl mx-auto px-6 md:px-10 mb-10">
         <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#6B6E73]">
           Our Portfolio
@@ -23,8 +23,8 @@ export default function ClientLogos() {
       </div>
       
       <div className="relative w-full flex overflow-x-hidden">
-        <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-[#111111] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-[#111111] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-[#0C0C0C] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-[#0C0C0C] to-transparent z-10 pointer-events-none"></div>
         
         <div className="flex animate-marquee whitespace-nowrap items-center hover:[animation-play-state:paused] transition-all">
           {doubled.map((client, i) => (

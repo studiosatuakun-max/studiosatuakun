@@ -8,13 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: '#121212',
-        paper: '#FAFAF9',
+        ink: '#0C0C0C',
+        paper: '#FFFFFF',
         graphite: '#6B6E73',
-        accent: '#2563EB',
-        'accent-hover': '#1D4ED8',
-        'tile-dark': '#121212',
-        'tile-darker': '#1C1C1E',
+        accent: '#0C0C0C',
+        'accent-hover': '#333333',
+        'tile-dark': '#0C0C0C',
+        'tile-darker': '#1A1A1A',
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],
@@ -28,7 +28,7 @@ module.exports = {
         widest2: '0.18em',
       },
       borderColor: {
-        DEFAULT: 'rgba(107, 110, 115, 0.25)',
+        DEFAULT: 'rgba(12, 12, 12, 0.15)',
       },
     },
   },

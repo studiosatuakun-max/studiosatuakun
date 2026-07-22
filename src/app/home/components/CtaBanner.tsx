@@ -17,7 +17,7 @@ export default function CtaBanner() {
           href="https://wa.me/6282260880878"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 font-mono text-xs uppercase tracking-widest px-8 py-4 bg-ink text-paper hover:bg-accent transition-colors duration-200 whitespace-nowrap"
+          className="flex-shrink-0 font-mono text-xs uppercase tracking-widest px-8 py-4 bg-ink text-paper hover:bg-accent-hover transition-colors duration-200 whitespace-nowrap"
         >
           Start Project Inquiry →
         </a>

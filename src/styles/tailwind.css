@@ -5,14 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
 
 :root {
-  --ink: #121212;
-  --paper: #FAFAF9;
+  --ink: #0C0C0C;
+  --paper: #FFFFFF;
   --graphite: #6B6E73;
-  --accent: #2563EB;
-  --accent-hover: #1D4ED8;
-  --border: rgba(107, 110, 115, 0.25);
-  --tile-dark: #121212;
-  --tile-dark-secondary: #1C1C1E;
+  --accent: #0C0C0C;
+  --accent-hover: #333333;
+  --border: rgba(12, 12, 12, 0.15);
+  --tile-dark: #0C0C0C;
+  --tile-dark-secondary: #1A1A1A;
   --radius-tile: 2px;
 }
 

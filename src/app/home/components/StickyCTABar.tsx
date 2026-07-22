@@ -44,7 +44,7 @@ export default function StickyCTABar() {
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         {/* Left label */}
         <div className="flex items-center gap-4">
-          <div className="w-2 h-2 rounded-full bg-accent animate-pulse flex-shrink-0" />
+          <div className="w-2 h-2 rounded-full bg-paper animate-pulse flex-shrink-0" />
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-paper">
               Free Build Guide
@@ -69,14 +69,14 @@ export default function StickyCTABar() {
             />
             <button
               type="submit"
-              className="font-mono text-xs uppercase tracking-widest px-6 bg-accent text-paper hover:bg-accent-hover transition-colors duration-200 flex-shrink-0"
+              className="font-mono text-xs uppercase tracking-widest px-6 bg-paper text-ink hover:bg-paper/90 transition-colors duration-200 flex-shrink-0"
             >
               Unlock Library
             </button>
           </form>
         ) : (
           <div className="flex items-center gap-3">
-            <Icon name="CheckCircleIcon" size={16} className="text-accent" variant="solid" />
+            <Icon name="CheckCircleIcon" size={16} className="text-paper" variant="solid" />
             <p className="font-mono text-xs text-paper/80">Check your inbox — library link sent.</p>
           </div>
         )}
