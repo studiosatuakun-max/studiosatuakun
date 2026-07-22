@@ -113,7 +113,7 @@ export default function TeamBento() {
         </p>
       </div>
 
-      <div className="bento-grid grid grid-cols-2 md:grid-cols-4">
+      <div className="bento-grid flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {team.map((member, idx) => (
           <div
             key={member.id}
@@ -126,6 +126,7 @@ export default function TeamBento() {
               ${member.dark ? 'bento-tile-dark' : ''}
               ${member.span}
               ${visible[idx] ? '' : 'hidden-tile'}
+              w-[85vw] md:w-auto shrink-0 snap-start
             `}
           >
             <TeamTile member={member} />
