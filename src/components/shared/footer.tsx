@@ -3,8 +3,8 @@ import Link from 'next/link';
 export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background py-12 mt-auto">
-      <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="col-span-1 md:col-span-2">
+      <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 text-center md:text-left">
+        <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
           <Link href="/" className="inline-flex items-center gap-2 group mb-6">
             <span className="font-mono text-lg font-semibold tracking-widest2 text-foreground uppercase group-hover:opacity-80 transition-opacity">
               Studio Satu Akun
@@ -68,9 +68,9 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="container mx-auto px-4 sm:px-8 mt-12 pt-8 border-t border-border/40 text-center flex flex-col md:flex-row justify-between items-center font-mono text-xs text-muted-foreground">
+      <div className="container mx-auto px-4 sm:px-8 mt-12 pt-8 border-t border-border/40 text-center flex flex-col md:flex-row justify-between items-center font-mono text-xs text-muted-foreground gap-4 md:gap-0">
         <p>&copy; {new Date().getFullYear()} PT Studio Satu Akun. All rights reserved.</p>
-        <div className="flex gap-6 mt-4 md:mt-0 uppercase tracking-widest">
+        <div className="flex gap-6 uppercase tracking-widest flex-wrap justify-center">
           <Link href="#" className="hover:text-foreground transition-colors">
             Privacy Policy
           </Link>

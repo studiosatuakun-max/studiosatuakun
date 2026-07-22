@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
               })}
             </time>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 text-balance leading-tight text-ink">
+          <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6 text-balance leading-tight text-ink">
             {post.title}
           </h1>
           <p className="text-lg md:text-xl text-graphite font-light leading-relaxed">{post.excerpt}</p>
