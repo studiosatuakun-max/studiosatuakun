@@ -16,7 +16,7 @@ export default function BlogPage() {
       <section className="relative pt-32 pb-16 overflow-hidden border-b border-[rgba(107,110,115,0.15)]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 blur-[100px] rounded-full pointer-events-none -z-10"></div>
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-ink">
+          <h1 className="font-mono text-4xl md:text-6xl font-light tracking-tight mb-4 text-ink">
             Blog & Insights
           </h1>
           <p className="text-graphite text-lg md:text-xl leading-relaxed font-light">
@@ -70,7 +70,7 @@ export default function BlogPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-ink mb-4 group-hover:text-accent transition-colors line-clamp-2">
+                  <h2 className="font-mono text-xl md:text-2xl font-medium tracking-tight text-ink mb-4 group-hover:text-accent transition-colors line-clamp-2">
                     {post.title}
                   </h2>
 

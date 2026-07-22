@@ -63,7 +63,7 @@ export default function BlogSection() {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-ink mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                <h3 className="font-mono text-lg font-medium tracking-tight text-ink mb-3 group-hover:text-accent transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
