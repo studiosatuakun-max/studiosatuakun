@@ -31,8 +31,8 @@ export default function Footer() {
               { label: 'Katalog', href: '#katalog' },
               { label: 'About', href: '#about' },
               { label: 'Journal', href: '/blog' },
-              { label: 'Privacy', href: '#' },
-              { label: 'Terms', href: '#' },
+              { label: 'Privacy', href: '/privacy' },
+              { label: 'Terms', href: '/terms' },
             ]?.map((link) => (
               <a
                 key={link?.label}
