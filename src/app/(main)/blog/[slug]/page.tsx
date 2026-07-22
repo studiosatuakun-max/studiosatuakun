@@ -3,7 +3,7 @@ import { getBlogPostBySlug, getBlogSlugs } from '@/lib/blog';
 import ReactMarkdown from 'react-markdown';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, Calendar } from 'lucide-react';
+import { ArrowLeft, Calendar, User } from 'lucide-react';
 
 // For Next.js 15, params is a Promise
 type Props = {
@@ -63,9 +63,8 @@ export default async function BlogPostPage({ params }: Props) {
     image: post.coverImage ? [post.coverImage] : ['https://studiosatuakun.id/og.jpg'],
     datePublished: new Date(post.date).toISOString(),
     author: {
-      '@type': 'Organization',
-      name: 'Studio Satu Akun',
-      url: 'https://studiosatuakun.id',
+      '@type': 'Person',
+      name: post.author,
     },
     publisher: {
       '@type': 'Organization',
@@ -94,15 +93,21 @@ export default async function BlogPostPage({ params }: Props) {
         </Link>
 
         <header className="mb-14">
-          <div className="flex items-center gap-2 text-xs text-accent mb-6 font-mono uppercase tracking-wide">
-            <Calendar className="w-4 h-4" />
-            <time dateTime={post.date}>
-              {new Date(post.date).toLocaleDateString('id-ID', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
+          <div className="flex items-center gap-6 text-xs text-graphite mb-6 font-mono uppercase tracking-wide">
+            <div className="flex items-center gap-2">
+              <User className="w-4 h-4" />
+              <span>{post.author}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              <time dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString('id-ID', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            </div>
           </div>
           <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6 text-balance leading-tight text-ink">
             {post.title}

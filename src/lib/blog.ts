@@ -10,6 +10,7 @@ export type BlogPost = {
   date: string;
   excerpt: string;
   coverImage?: string;
+  author?: string;
   content: string;
 };
 
@@ -36,6 +37,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
       date: data.date || 'Unknown Date',
       excerpt: data.excerpt || '',
       coverImage: data.coverImage || '',
+      author: data.author || 'Runa',
       content,
     };
   } catch (error) {

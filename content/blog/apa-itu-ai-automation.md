@@ -3,6 +3,7 @@ title: "Apa itu AI Automation dan Bagaimana Mengubah Bisnis Anda"
 date: "2026-06-23"
 excerpt: "Pelajari bagaimana AI Automation (Otomatisasi Kecerdasan Buatan) dapat menghemat ratusan jam kerja dan menekan biaya operasional bisnis Anda."
 coverImage: "/og.png"
+author: "Runa"
 ---
 
 Dunia bisnis bergerak sangat cepat. Jika staf Anda masih menghabiskan berjam-jam setiap hari untuk melakukan tugas-tugas repetitif seperti membalas email standar, memasukkan data ke Excel, atau menyortir prospek, Anda tertinggal.

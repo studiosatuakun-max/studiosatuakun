@@ -3,6 +3,7 @@ title: "Berapa Biaya Pembuatan Aplikasi Dashboard Monitoring untuk HRD di 2026?"
 date: "2026-06-24"
 coverImage: "/blog/hr-dashboard.png"
 excerpt: "Panduan lengkap mengenai estimasi biaya, fitur esensial, dan manfaat pembuatan aplikasi dashboard monitoring custom untuk departemen HRD di tahun 2026."
+author: "Runa"
 ---
 
 Di era transformasi digital tahun 2026, mengelola sumber daya manusia (SDM) tidak lagi cukup hanya dengan menggunakan spreadsheet manual. Perusahaan berskala menengah hingga raksasa kini beralih ke **Aplikasi Dashboard Monitoring HRD** yang terintegrasi untuk melacak kinerja, absensi, hingga *payroll* secara *real-time*.
