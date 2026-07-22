@@ -28,12 +28,12 @@ export default function BlogSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-8 pb-4 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {posts.map((post) => (
             <Link
               href={`/blog/${post.slug}`}
               key={post.slug}
-              className="group flex flex-col border border-[rgba(107,110,115,0.15)] bg-white hover:border-ink/50 transition-all duration-300"
+              className="group flex flex-col border border-[rgba(107,110,115,0.15)] bg-white hover:border-ink/50 transition-all duration-300 w-[85vw] md:w-auto shrink-0 snap-start"
             >
               {post.coverImage ? (
                 <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100">
