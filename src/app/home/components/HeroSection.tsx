@@ -51,7 +51,7 @@ export default function HeroSection() {
           >
             <p className="font-sans text-sm text-paper/60 max-w-xs md:text-right leading-relaxed font-light">
               Custom web applications. High-converting landing pages. Data-driven dashboards built
-              with Next.js and Supabase.
+              with modern web technologies and secure cloud databases.
             </p>
             <div className="flex items-center gap-3">
               <a

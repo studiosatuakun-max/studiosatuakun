@@ -34,7 +34,7 @@ const services: Service[] = [
     price: 'From IDR 8.000.000',
     detail:
       'Highly interactive web applications with robust state management, authentication, and database logic. Ideal for marketplaces, SaaS, and community portals.',
-    tags: ['Next.js', 'Supabase', 'React', 'Interactive'],
+    tags: ['Web App', 'Cloud DB', 'Frontend', 'Interactive'],
   },
   {
     num: '04',

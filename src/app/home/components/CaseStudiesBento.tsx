@@ -23,7 +23,7 @@ const studies: CaseStudy[] = [
     problem:
       'UMKM/Agensi sering terjebak menggunakan pembuat web instan yang berat (bloated CSS/JS). Halaman memuat lebih dari 5 detik, menyebabkan bounce rate tinggi dan budget iklan terbuang sia-sia.',
     solution:
-      'Rebuild ulang menggunakan Next.js 15 dengan mayoritas Server Components. Desain diubah ke format Bento Grid yang rapi dan memanjakan mata (pakai Tailwind CSS). Semua aset gambar dioptimasi otomatis via next/image dengan format WebP.',
+      'Rebuild ulang menggunakan modern web framework dengan kapabilitas server-side. Desain diubah ke format Bento Grid yang rapi dan memanjakan mata menggunakan utility-first CSS. Semua aset gambar dioptimasi otomatis dengan format WebP.',
     impact:
       'LCP (Largest Contentful Paint) turun drastis di bawah 1.5 detik (hijau di PageSpeed Insights). Rasio klik ke tombol WhatsApp/Formulir meningkat hingga 40%.',
   },
@@ -36,7 +36,7 @@ const studies: CaseStudy[] = [
     problem:
       'Banyak startup atau bisnis jasa mengandalkan kombinasi Google Form, Excel, dan WhatsApp secara manual untuk mengatur pesanan atau member. Saat pengguna tembus ribuan, admin kewalahan dan sering terjadi data ganda/hilang.',
     solution:
-      'Pembuatan Progressive Web App (PWA) lengkap dengan sistem autentikasi dari Supabase. Mengimplementasikan dashboard pengguna yang dinamis menggunakan Client Components untuk filter dan interaksi, serta Server Actions untuk mutasi data yang aman.',
+      'Pembuatan Progressive Web App (PWA) lengkap dengan sistem autentikasi berbasis cloud yang aman. Mengimplementasikan dashboard pengguna yang dinamis menggunakan komponen interaktif untuk filter dan fungsi server untuk mutasi data yang aman.',
     impact:
       'Beban kerja admin turun 80%. Pengguna bisa self-service mulai dari registrasi, pantau status layanan, hingga pembayaran dalam satu platform terpadu.',
   },
@@ -62,7 +62,7 @@ const studies: CaseStudy[] = [
     problem:
       'Perusahaan membeli software pabrikan (SaaS) yang mahal, tapi 60% fiturnya tidak terpakai, sementara proses bisnis inti mereka justru tidak terakomodasi karena keterbatasan kustomisasi dari vendor.',
     solution:
-      'Rancang bangun arsitektur custom software dari nol menggunakan Next.js App Router dan Supabase (Relational Database). Pembuatan Role-Based Access Control (RBAC) yang sangat granular via middleware untuk mengunci fitur berdasarkan departemen dan jabatan.',
+      'Rancang bangun arsitektur custom software dari nol menggunakan arsitektur web modern dan Cloud Relational Database. Pembuatan Role-Based Access Control (RBAC) yang sangat granular via middleware untuk mengunci fitur berdasarkan departemen dan jabatan.',
     impact:
       'Sistem berjalan 100% sesuai alur SOP perusahaan tanpa biaya lisensi per- user yang mahal. Skalabilitas aman untuk jangka panjang tanpa vendor lock-in.',
   },
@@ -75,7 +75,7 @@ const studies: CaseStudy[] = [
     problem:
       'Tim internal kewalahan merespons ratusan pertanyaan standar atau menghabiskan waktu berjam-jam hanya untuk membuat draft laporan, deskripsi produk, atau menyortir data masuk.',
     solution:
-      'Integrasi API LLM (seperti Gemini atau OpenAI) ke dalam backend Next.js. Pembuatan sistem RAG (Retrieval-Augmented Generation) agar AI bisa menjawab/merangkum berdasarkan dokumen internal klien.',
+      'Integrasi API LLM (seperti Gemini atau OpenAI) ke dalam arsitektur backend kustom. Pembuatan sistem RAG (Retrieval-Augmented Generation) agar AI bisa menjawab/merangkum berdasarkan dokumen internal klien.',
     impact:
       'Kecepatan respons dan produksi konten naik 3x lipat. Biaya operasional untuk tugas repetitif berkurang drastis karena sistem bekerja otomatis 24/7 dengan konsistensi tinggi.',
   },
