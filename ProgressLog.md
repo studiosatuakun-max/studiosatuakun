@@ -75,7 +75,7 @@ Catatan progres pengembangan platform **studiosatuakun.id** sebagai etalase port
 
 ## 📋 Sisa Pekerjaan
 
-- [ ] Fix Supabase RLS (`ALTER TABLE orders DISABLE ROW LEVEL SECURITY;`)
-- [ ] Test end-to-end: Isi form checkout → cek data masuk di Supabase dashboard
-- [ ] Tambahkan env vars Supabase ke Vercel project settings agar production juga bisa insert
+- [x] Fix Supabase RLS (`ALTER TABLE orders DISABLE ROW LEVEL SECURITY;`)
+- [x] Test end-to-end: Isi form checkout → cek data masuk di Supabase dashboard
+- [x] Tambahkan env vars Supabase ke Vercel project settings agar production juga bisa insert
 - [ ] (Opsional) Notifikasi email/WA otomatis saat order baru masuk
