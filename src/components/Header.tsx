@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -36,7 +36,7 @@ export default function Header() {
           {['Work', 'Services', 'Katalog', 'About']?.map((item) => (
             <a
               key={item}
-              href={`#${item?.toLowerCase()}`}
+              href={pathname === '/home' || pathname === '/' ? `#${item?.toLowerCase()}` : `/home#${item?.toLowerCase()}`}
               className="font-mono text-xs uppercase tracking-widest text-graphite hover:text-ink transition-colors duration-200"
             >
               {item}
@@ -78,7 +78,7 @@ export default function Header() {
           {['Work', 'Services', 'Katalog', 'About']?.map((item, i) => (
             <a
               key={item}
-              href={`#${item?.toLowerCase()}`}
+              href={pathname === '/home' || pathname === '/' ? `#${item?.toLowerCase()}` : `/home#${item?.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="font-mono text-4xl uppercase tracking-tighter text-ink hover:text-accent transition-colors duration-200"
               style={{ transitionDelay: `${i * 60}ms` }}

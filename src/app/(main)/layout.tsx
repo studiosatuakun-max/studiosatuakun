@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/shared/navbar';
+import Header from '@/components/Header';
 import { Footer } from '@/components/shared/footer';
 
 export default function MainLayout({
@@ -8,7 +8,7 @@ export default function MainLayout({
 }>) {
   return (
     <>
-      <Navbar />
+      <Header />
       <main className="flex-1 flex flex-col">{children}</main>
       <Footer />
     </>
