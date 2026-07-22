@@ -7,6 +7,8 @@ import ResourcesBento from './components/ResourcesBento';
 import CaseStudiesBento from './components/CaseStudiesBento';
 import TeamBento from './components/TeamBento';
 import ServicesAccordion from './components/ServicesAccordion';
+import BlogSection from './components/BlogSection';
+
 export default function HomePage() {
   return (
     <main className="relative bg-paper text-ink">
@@ -17,6 +19,7 @@ export default function HomePage() {
       <CaseStudiesBento />
       <ServicesAccordion />
       <TeamBento />
+      <BlogSection />
       <Footer />
     </main>
   );
