@@ -16,11 +16,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/contact',
-        destination: '/', // Or a specific anchor if preferred
-        permanent: true, // 301 Permanent Redirect for SEO
-      },
-      {
         source: '/services',
         destination: '/#services',
         permanent: true,
