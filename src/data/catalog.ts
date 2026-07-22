@@ -127,6 +127,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://bookings1784700170158.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fbookings1784700170158.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'weave_1784700324971',
+    category: 'web-app',
+    title: 'Artisan Bundle Drop — E-Commerce',
+    description:
+      'Template website e-commerce untuk produk artisan, rilis produk khusus (drop), atau kerajinan tangan. Dilengkapi countdown timer pre-order dan desain estetik natural.',
+    githubUrl: 'https://github.com/studiosatuakun-max/weave_1784700324971',
+    previewUrl: '/preview/weave_1784700324971',
+    techStack: ['Next.js 15', 'Tailwind CSS'],
+    liveDemoUrl: 'https://weave1784700324971.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fweave1784700324971.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
