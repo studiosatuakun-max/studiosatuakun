@@ -56,8 +56,34 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    image: post.coverImage ? [post.coverImage] : ['https://studiosatuakun.id/og.jpg'],
+    datePublished: new Date(post.date).toISOString(),
+    author: {
+      '@type': 'Organization',
+      name: 'Studio Satu Akun',
+      url: 'https://studiosatuakun.id',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Studio Satu Akun',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://studiosatuakun.id/assets/images/app_logo.png',
+      },
+    },
+    description: post.excerpt,
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-paper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-4 max-w-3xl pt-32 pb-20">
         <Link
           href="/blog"
