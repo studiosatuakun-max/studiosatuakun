@@ -12,12 +12,12 @@ export default function BlogSection() {
     <section id="blog" className="py-24 px-6 md:px-10 border-t border-[rgba(107,110,115,0.15)] bg-paper">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div className="flex flex-col gap-3">
-            <span className="font-mono text-sm font-semibold tracking-widest2 text-ink uppercase">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest2 text-graphite">
               Insights & Articles
             </span>
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight text-ink">
-              Latest from the Blog.
+            <h2 className="mt-2 font-mono text-3xl md:text-4xl font-light text-ink tracking-tight">
+              Latest from the blog.
             </h2>
           </div>
           <Link
