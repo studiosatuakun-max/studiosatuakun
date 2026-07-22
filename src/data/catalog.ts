@@ -79,6 +79,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://fade1784619000074.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Ffade1784619000074.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'sober_1784698889697',
+    category: 'landing-page',
+    title: 'Rehab Center — Medical & Therapy',
+    description:
+      'Template website profesional untuk klinik rehabilitasi, pusat pemulihan, atau layanan terapi. Dilengkapi fitur program treatment, jadwal konseling, dan edukasi.',
+    githubUrl: 'https://github.com/studiosatuakun-max/sober_1784698889697',
+    previewUrl: '/preview/sober_1784698889697',
+    techStack: ['Next.js 15', 'Tailwind CSS', 'Framer Motion'],
+    liveDemoUrl: 'https://sober1784698889697.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fsober1784698889697.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
