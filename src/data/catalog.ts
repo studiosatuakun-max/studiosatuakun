@@ -1,5 +1,5 @@
 export type CategorySlug =
-  'landing-page' | 'web-app' | 'dashboard' | 'software-studio' | 'ai-automation';
+  'landing-page' | 'web-app' | 'dashboard' | 'umkm' | 'ai-automation';
 
 export interface CategoryInfo {
   id: CategorySlug;
@@ -28,10 +28,10 @@ export const CATEGORIES: CategoryInfo[] = [
     iconName: 'ChartBarSquareIcon',
   },
   {
-    id: 'software-studio',
-    title: 'Software Studio',
-    description: 'Custom enterprise architectures and bespoke integrations.',
-    iconName: 'CodeBracketSquareIcon',
+    id: 'umkm',
+    title: 'UMKM & Bisnis Lokal',
+    description: 'Sistem ERP lokal, POS, dan portal operasional terpadu untuk UMKM dan bisnis menengah.',
+    iconName: 'BuildingStorefrontIcon',
   },
   {
     id: 'ai-automation',
@@ -186,6 +186,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
     liveDemoUrl: 'https://cultivar1785086656942.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fcultivar1785086656942.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
+  {
+    id: 'greennagan',
+    category: 'umkm',
+    title: 'Resto ERP & POS Hub — Multi-Branch Management',
+    description:
+      'Template sistem ERP dan POS terintegrasi khusus untuk restoran, kafe, atau UMKM F&B multi-cabang. Dilengkapi 5 modul role khusus (Owner ERP, Waiter Pad, Cashier POS, Kitchen KDS, dan Manager Hub) secara real-time.',
+    githubUrl: 'https://github.com/studiosatuakun-max/GreenNagan',
+    previewUrl: '/preview/greennagan',
+    techStack: ['Next.js 16', 'Tailwind CSS', 'Lucide Icons'],
+    liveDemoUrl: 'https://greennagan-deels-projects.vercel.app',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fgreennagan-deels-projects.vercel.app&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
 ];
 

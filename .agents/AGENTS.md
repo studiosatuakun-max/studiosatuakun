@@ -9,7 +9,7 @@
    - `landing-page` — UMKM, barbershop, agency, F&B, personal brand
    - `web-app` — booking system, SaaS, portal, marketplace
    - `dashboard` — admin panel, data visualization, reporting tool
-   - `software-studio` — enterprise architecture, bespoke software
+   - `umkm` — sistem ERP lokal, POS, portal operasional UMKM
    - `ai-automation` — LLM integration, RAG system, agentic workflow
 3. **Generate Slugs:**
    - `repoSlug`: Use the exact repository name (e.g., `fade_1784619000074`) for git cloning and vercel deploying.

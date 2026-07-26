@@ -47,7 +47,7 @@ supabase/
 | `landing-page` | Landing Page | Barbershop, Agency, UMKM, F&B, dll |
 | `web-app` | Web App | Booking system, SaaS frontend, portal |
 | `dashboard` | Dashboard Monitoring | Admin panel, data viz, reporting |
-| `software-studio` | Software Studio | Enterprise, bespoke software |
+| `umkm` | UMKM & Bisnis Lokal | Sistem ERP lokal, POS, portal operasional |
 | `ai-automation` | AI Automation | LLM, RAG, agentic workflows |
 
 ---
@@ -153,7 +153,12 @@ Setiap kali user submit form checkout, data tersimpan otomatis dengan kolom:
 | `weave` | Artisan Bundle Drop — E-Commerce | https://weave1784700324971.vercel.app |
 | `bargain` | Bargain Outlet — Surplus & Deals Marketplace | https://bargain1785085750387.vercel.app |
 
-### Software Studio, AI Automation
+### UMKM & Bisnis Lokal
+| ID | Judul | Live Demo |
+|---|---|---|
+| `greennagan` | Resto ERP & POS Hub — Multi-Branch Management | https://greennagan-deels-projects.vercel.app |
+
+### AI Automation
 → **Kosong — prioritas pengisian berikutnya!**
 
 ---
