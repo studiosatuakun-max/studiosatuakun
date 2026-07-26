@@ -64,9 +64,6 @@ export function CTA() {
             <Link href="#" className="hover:text-primary transition-colors">
               LinkedIn
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              GitHub
-            </Link>
           </div>
         </div>
       </div>

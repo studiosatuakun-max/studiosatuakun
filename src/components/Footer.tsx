@@ -54,7 +54,7 @@ export default function Footer() {
           </span>
           <div className="flex items-center gap-6">
             {[
-              { label: 'GitHub', href: '#' },
+              { label: 'Instagram', href: '#' },
               { label: 'Twitter', href: '#' },
               { label: 'LinkedIn', href: '#' },
             ]?.map((s) => (

@@ -103,21 +103,13 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-4 pt-6 border-t border-[rgba(107,110,115,0.15)] mt-auto">
+                    <div className="pt-6 border-t border-[rgba(107,110,115,0.15)] mt-auto">
                       <Link
                         href={template.previewUrl}
-                        className="flex-1 text-center font-mono text-xs uppercase tracking-widest px-4 py-3 bg-ink text-paper hover:bg-accent transition-colors"
+                        className="block w-full text-center font-mono text-xs uppercase tracking-widest px-4 py-3 bg-ink text-paper hover:bg-accent transition-colors"
                       >
                         Live Preview
                       </Link>
-                      <a
-                        href={template.githubUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="w-10 h-10 flex items-center justify-center border border-[rgba(107,110,115,0.25)] text-graphite hover:text-ink hover:border-ink transition-colors"
-                      >
-                        <Icon name="CodeBracketIcon" size={16} />
-                      </a>
                     </div>
                   </div>
                 </div>

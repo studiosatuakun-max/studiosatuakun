@@ -10,9 +10,9 @@ export default function Demo() {
         description="Interfaces with refined motion. Every calculated detail delivers an elevated digital experience."
         primaryCta="Explore Design"
         primaryCtaMobile="Explore"
-        secondaryCta="View GitHub"
-        secondaryCtaMobile="GitHub"
-        githubUrl="https://github.com/studiosatuakun"
+        secondaryCta="Contact Us"
+        secondaryCtaMobile="Contact"
+        githubUrl="/contact"
       />
     </div>
   );
