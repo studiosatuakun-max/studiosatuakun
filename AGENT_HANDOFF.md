@@ -77,15 +77,15 @@ Edit `src/data/catalog.ts` dan tambah entry baru ke array `TEMPLATES`:
 
 ```typescript
 {
-  id: 'nama_repo_slug',           // Sama dengan nama repo di GitHub
+  id: 'nama_clean_slug',          // Slug bersih tanpa angka timestamp (e.g. 'fade')
   category: 'landing-page',       // Salah satu dari 5 kategori di atas
   title: 'Nama Deskriptif',       // Langsung paham → "Barbershop 24/7 — Dark Premium"
   description: 'Deskripsi...',    // 1-2 kalimat, bahasa Indonesia, orientasi bisnis
-  githubUrl: 'https://github.com/studiosatuakun-max/nama_repo',
-  previewUrl: '/preview/nama_repo_slug',
+  githubUrl: 'https://github.com/studiosatuakun-max/nama_repo_12345',
+  previewUrl: '/preview/nama_clean_slug', // URL preview bersih tanpa angka timestamp
   techStack: ['Next.js 15', 'Tailwind CSS'],
-  liveDemoUrl: 'https://nama_repo_slug.vercel.app/home',
-  imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fnama_repo_slug.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  liveDemoUrl: 'https://nama_repo_12345.vercel.app/home',
+  imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fnama_repo_12345.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
 }
 ```
 
@@ -133,10 +133,26 @@ Setiap kali user submit form checkout, data tersimpan otomatis dengan kolom:
 ### Landing Page
 | ID | Judul | Live Demo |
 |---|---|---|
-| `scaffold_1784613264918` | Web Agency — Portfolio & Services | https://scaffold1784613264918.vercel.app |
-| `fade_1784619000074` | Barbershop 24/7 — Dark & Premium | https://fade1784619000074.vercel.app |
+| `scaffold` | Web Agency — Portfolio & Services | https://scaffold1784613264918.vercel.app |
+| `fade` | Barbershop 24/7 — Dark & Premium | https://fade1784619000074.vercel.app |
+| `sober` | Rehab Center — Medical & Therapy | https://sober1784698889697.vercel.app |
+| `appraise` | Real Estate Appraisal — Property Valuation | https://appraise1784699261083.vercel.app |
+| `triage` | Vet Clinic 24/7 — Animal Emergency & Triage | https://triage1784986284137.vercel.app |
 
-### Web App, Dashboard, Software Studio, AI Automation
+### Dashboard Monitoring
+| ID | Judul | Live Demo |
+|---|---|---|
+| `forecast` | Operations Center & Data Monitoring | https://forecast1784699756735.vercel.app |
+| `yield` | AgriTech Dashboard — Territory & Sales Monitoring | https://yield1785086471655.vercel.app |
+
+### Web App
+| ID | Judul | Live Demo |
+|---|---|---|
+| `bookings` | Salon Booking & Social Media Manager | https://bookings1784700170158.vercel.app |
+| `weave` | Artisan Bundle Drop — E-Commerce | https://weave1784700324971.vercel.app |
+| `bargain` | Bargain Outlet — Surplus & Deals Marketplace | https://bargain1785085750387.vercel.app |
+
+### Software Studio, AI Automation
 → **Kosong — prioritas pengisian berikutnya!**
 
 ---
