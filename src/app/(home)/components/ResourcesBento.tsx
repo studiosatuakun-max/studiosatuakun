@@ -42,7 +42,7 @@ export default function ResourcesBento() {
               </div>
 
               <div className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-graphite group-hover:text-ink transition-colors duration-300">
-                <span>View Foundations</span>
+                <span>View Our Work</span>
                 <Icon
                   name="ArrowRightIcon"
                   size={12}

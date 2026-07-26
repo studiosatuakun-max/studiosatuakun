@@ -48,7 +48,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             <div className="text-center py-20 border border-dashed border-[rgba(107,110,115,0.25)] flex flex-col items-center">
               <Icon name="CodeBracketIcon" size={32} className="text-graphite mb-4 opacity-50" />
               <p className="font-mono text-sm text-graphite uppercase tracking-widest">
-                No foundations yet
+                No templates yet
               </p>
               <p className="font-sans text-sm text-graphite mt-2">
                 Check back soon for new additions to this category.
