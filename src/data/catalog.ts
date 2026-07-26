@@ -139,6 +139,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://weave1784700324971.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fweave1784700324971.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'triage_1784986284137',
+    category: 'landing-page',
+    title: 'Vet Clinic 24/7 — Animal Emergency & Triage',
+    description:
+      'Template website untuk klinik hewan dan rumah sakit darurat hewan (veterinary ER) 24 jam. Dilengkapi panduan triase kondisi darurat, profil tim dokter hewan, dan layanan panggilan cepat.',
+    githubUrl: 'https://github.com/studiosatuakun-max/triage_1784986284137',
+    previewUrl: '/preview/triage_1784986284137',
+    techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
+    liveDemoUrl: 'https://triage1784986284137.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Ftriage1784986284137.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
