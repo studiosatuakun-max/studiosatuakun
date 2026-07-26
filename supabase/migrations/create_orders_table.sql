@@ -36,6 +36,10 @@ ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow anonymous insert" ON orders
   FOR INSERT TO anon WITH CHECK (true);
 
+-- Allow authenticated users to insert too
+CREATE POLICY "Allow authenticated insert" ON orders
+  FOR INSERT TO authenticated WITH CHECK (true);
+
 -- Allow service role to read all (for your dashboard)
 CREATE POLICY "Allow service role full access" ON orders
   FOR ALL TO service_role USING (true);
