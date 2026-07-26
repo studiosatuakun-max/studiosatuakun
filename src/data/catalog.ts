@@ -151,6 +151,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://triage1784986284137.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Ftriage1784986284137.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'bargain_1785085750387',
+    category: 'web-app',
+    title: 'Bargain Outlet — Surplus & Deals Marketplace',
+    description:
+      'Template web app marketplace barang diskon, surplus gudang (overstock), dan produk open box. Dilengkapi fitur penawaran flash sale (doorbusters), manajemen stok real-time, dan keranjang belanja interaktif.',
+    githubUrl: 'https://github.com/studiosatuakun-max/bargain_1785085750387',
+    previewUrl: '/preview/bargain_1785085750387',
+    techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
+    liveDemoUrl: 'https://bargain1785085750387.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fbargain1785085750387.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
