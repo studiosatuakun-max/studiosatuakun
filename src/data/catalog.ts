@@ -211,6 +211,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://mesa1785086036479.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fmesa1785086036479.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'lather',
+    category: 'umkm',
+    title: 'Artisan Bath & Body — Wholesale & Retail Portal',
+    description:
+      'Template portal e-commerce grosir (wholesale) dan ritel untuk UMKM produk kecantikan artisan, sabun organik, dan body care. Dilengkapi bento grid katalog produk, kuis rekomendasi interaktif, serta kalkulator margin bisnis reseller.',
+    githubUrl: 'https://github.com/studiosatuakun-max/lather_1785089830799',
+    previewUrl: '/preview/lather',
+    techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
+    liveDemoUrl: 'https://lather1785089830799.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Flather1785089830799.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {

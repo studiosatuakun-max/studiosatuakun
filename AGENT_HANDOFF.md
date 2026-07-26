@@ -158,6 +158,7 @@ Setiap kali user submit form checkout, data tersimpan otomatis dengan kolom:
 |---|---|---|
 | `greennagan` | Resto ERP & POS Hub — Multi-Branch Management | https://greennagan-deels-projects.vercel.app |
 | `mesa` | Artisan F&B Resto — Online Ordering & Menu Portal | https://mesa1785086036479.vercel.app |
+| `lather` | Artisan Bath & Body — Wholesale & Retail Portal | https://lather1785089830799.vercel.app |
 
 ### AI Automation
 → **Kosong — prioritas pengisian berikutnya!**
