@@ -175,6 +175,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://yield1785086471655.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fyield1785086471655.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'cultivar',
+    category: 'dashboard',
+    title: 'AgriTech Dashboard — Farm Operations & Crop Monitoring',
+    description:
+      'Template dashboard pusat komando operasi pertanian dan perkebunan (AgriTech) untuk memantau siklus panen, pemeliharaan alat berat, dan logistik lapangan secara terpadu. Cocok untuk agribisnis skala menengah hingga besar yang ingin mendigitalisasi pencatatan dari spreadsheet ke sistem real-time.',
+    githubUrl: 'https://github.com/studiosatuakun-max/cultivar_1785086656942',
+    previewUrl: '/preview/cultivar',
+    techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
+    liveDemoUrl: 'https://cultivar1785086656942.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fcultivar1785086656942.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {

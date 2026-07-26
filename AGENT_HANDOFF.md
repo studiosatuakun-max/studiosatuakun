@@ -144,6 +144,7 @@ Setiap kali user submit form checkout, data tersimpan otomatis dengan kolom:
 |---|---|---|
 | `forecast` | Operations Center & Data Monitoring | https://forecast1784699756735.vercel.app |
 | `yield` | AgriTech Dashboard — Territory & Sales Monitoring | https://yield1785086471655.vercel.app |
+| `cultivar` | AgriTech Dashboard — Farm Operations & Crop Monitoring | https://cultivar1785086656942.vercel.app |
 
 ### Web App
 | ID | Judul | Live Demo |
