@@ -8,7 +8,8 @@ const clients = [
   'ronaos.com',
   'saven.com',
   'liceria',
-  'Aura Aesthetic'
+  'Aura Aesthetic',
+  'Nagan Raya Caffe & Resto Group'
 ];
 
 export default function ClientLogos() {
