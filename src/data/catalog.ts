@@ -223,6 +223,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://lather1785089830799.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Flather1785089830799.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'selvage',
+    category: 'umkm',
+    title: 'Artisan Denim & Streetwear — E-Commerce Portal',
+    description:
+      'Template portal e-commerce dan sistem drop eksklusif untuk brand fashion ritel, denim artisan, dan distro lokal (UMKM). Dilengkapi galeri foto UGC, keranjang belanja interaktif (Haul Bar), serta fitur keanggotaan klub (membership drop club).',
+    githubUrl: 'https://github.com/studiosatuakun-max/selvage_1785090230743',
+    previewUrl: '/preview/selvage',
+    techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
+    liveDemoUrl: 'https://selvage1785090230743.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fselvage1785090230743.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
