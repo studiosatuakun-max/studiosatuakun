@@ -163,6 +163,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://bargain1785085750387.vercel.app/home',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fbargain1785085750387.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'yield_1785086471655',
+    category: 'dashboard',
+    title: 'AgriTech Dashboard — Territory & Sales Monitoring',
+    description:
+      'Template dashboard pemantauan teritori penjualan, analitik diler, dan proyeksi pendapatan khusus industri agribisnis serta pertanian (AgriTech). Dilengkapi pemetaan interaktif real-time, pelacakan siklus panen, serta integrasi sistem ERP.',
+    githubUrl: 'https://github.com/studiosatuakun-max/yield_1785086471655',
+    previewUrl: '/preview/yield_1785086471655',
+    techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
+    liveDemoUrl: 'https://yield1785086471655.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fyield1785086471655.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
