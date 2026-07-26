@@ -199,6 +199,18 @@ export const TEMPLATES: CatalogTemplate[] = [
     liveDemoUrl: 'https://greennagan-deels-projects.vercel.app',
     imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fgreennagan-deels-projects.vercel.app&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
   },
+  {
+    id: 'mesa',
+    category: 'umkm',
+    title: 'Artisan F&B Resto — Online Ordering & Menu Portal',
+    description:
+      'Template website komersial untuk restoran, cloud kitchen, dan bisnis kuliner (F&B) UMKM. Dilengkapi menu bento interaktif, slider foto hidangan before/after, promo flash deal, dan integrasi pemesanan langsung.',
+    githubUrl: 'https://github.com/studiosatuakun-max/mesa_1785086036479',
+    previewUrl: '/preview/mesa',
+    techStack: ['Modern Framework', 'Utility CSS', 'Animations'],
+    liveDemoUrl: 'https://mesa1785086036479.vercel.app/home',
+    imageUrl: 'https://api.microlink.io/?url=https%3A%2F%2Fmesa1785086036479.vercel.app%2Fhome&screenshot=true&meta=false&embed=screenshot.url&type=jpeg',
+  },
 ];
 
 export function getTemplatesByCategory(category: CategorySlug): CatalogTemplate[] {
